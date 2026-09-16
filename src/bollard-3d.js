@@ -172,29 +172,27 @@ export function thumbURL(kind, b) {
   return url;
 }
 
-// ---------- binding perezoso ----------
-let thumbIO = null;
+// ---------- binding: render eager por lotes (12ms por frame) ----------
 export function bindBollard3D(scope) {
   const sel = Object.values(REG).map((r) => `img[${r.imgAttr}]:not([src])`).join(',');
   const imgs = [...scope.querySelectorAll(sel)];
-  if (imgs.length && !thumbIO) {
-    thumbIO = new IntersectionObserver((entries) => {
-      for (const e of entries) {
-        if (!e.isIntersecting) continue;
-        const img = e.target;
-        thumbIO.unobserve(img);
-        try {
-          const kind = img.hasAttribute('data-pol3d') ? 'pol' : 'bol';
-          const b = REG[kind].byId.get(img.getAttribute(REG[kind].imgAttr));
-          if (b) {
-            img.src = thumbURL(kind, b);
-            img.onload = () => img.classList.add('ld');
-          }
-        } catch { /* sin WebGL: se queda el shimmer */ }
-      }
-    }, { rootMargin: '200px' });
-  }
-  imgs.forEach((img) => thumbIO && thumbIO.observe(img));
+  const step = () => {
+    const t0 = performance.now();
+    while (imgs.length && performance.now() - t0 < 12) {
+      const img = imgs.shift();
+      if (!img.isConnected) continue;
+      try {
+        const kind = img.hasAttribute('data-pol3d') ? 'pol' : 'bol';
+        const b = REG[kind].byId.get(img.getAttribute(REG[kind].imgAttr));
+        if (b) {
+          img.src = thumbURL(kind, b);
+          img.onload = () => img.classList.add('ld');
+        }
+      } catch { /* sin WebGL: se queda el shimmer */ }
+    }
+    if (imgs.length) requestAnimationFrame(step);
+  };
+  if (imgs.length) requestAnimationFrame(step);
   if (!scope.dataset.bol3dBound) {
     scope.dataset.bol3dBound = '1';
     scope.addEventListener('click', (e) => {

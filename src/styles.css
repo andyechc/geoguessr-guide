@@ -341,9 +341,17 @@ mark { background: var(--amber); color: #111; border-radius: 3px; padding: 0 2px
 /* como en el juego: la matrícula entera va difuminada, el color manda */
 .platewrap { transition: filter 0.25s; }
 body:not(.noblur) .platewrap { filter: blur(6px); }
-.bol-grid { grid-template-columns: repeat(auto-fill, minmax(215px, 1fr)); }
+.bol-grid { grid-template-columns: repeat(auto-fill, minmax(132px, 1fr)); gap: 12px; }
 .bol-card { text-align: center; }
 .bol-card .pad { text-align: left; }
+/* grid completo de bollards: cards compactas */
+.bol-grid .bol-card .pad { padding: 8px 10px 10px; }
+.bol-grid .bol-card p { font-size: 12px; line-height: 1.45; margin: 4px 0; }
+.bol-grid .meta { margin: 4px 0 6px; gap: 4px; }
+.bol-grid .cbadge { font-size: 11px; padding: 2px 8px 2px 3px; gap: 5px; }
+.bol-grid .cbadge b { font-size: 11px; padding: 1px 5px; }
+.bol-grid .cmpbtn { padding: 6px 12px; font-size: 12px; margin-top: 6px; }
+.bol-grid .bol3d-badge { font-size: 10px; padding: 3px 8px; right: 6px; bottom: 6px; }
 .photostrip { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-top: 6px; }
 .photostrip figure { margin: 0; background: var(--card); border: 1px solid var(--line); border-radius: var(--r-md); overflow: hidden; }
 .photostrip img { width: 100%; height: 170px; object-fit: cover; display: block; cursor: zoom-in; transition: transform 0.3s var(--ease); }
