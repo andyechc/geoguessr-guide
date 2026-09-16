@@ -38,25 +38,20 @@ export function initHeroGlobe(canvas) {
   const R = 1;
   let landPoints = null;
 
-  function setDots(positions, colors, size) {
-    if (landPoints) {
-      globe.remove(landPoints);
-      landPoints.geometry.dispose();
-      landPoints.material.dispose();
-    }
+  function makeDots(positions, colors, size, opacity) {
     const g = new THREE.BufferGeometry();
     g.setAttribute('position', new THREE.BufferAttribute(positions, 3));
     if (colors) g.setAttribute('color', new THREE.BufferAttribute(colors, 3));
     const m = new THREE.PointsMaterial({
-      size, transparent: true, opacity: 0.9,
+      size, transparent: true, opacity,
       sizeAttenuation: true, depthWrite: false,
       vertexColors: !!colors, color: colors ? 0xffffff : MAP_BLUE,
     });
-    landPoints = new THREE.Points(g, m);
-    globe.add(landPoints);
+    return new THREE.Points(g, m);
   }
 
-  function buildFallback() {
+  // Base tenue en toda la esfera (océanos): el planeta siempre se lee completo
+  function buildOcean() {
     const N = 1500;
     const pos = new Float32Array(N * 3);
     const v = new THREE.Vector3();
@@ -64,10 +59,10 @@ export function initHeroGlobe(canvas) {
       const y = 1 - (i / (N - 1)) * 2;
       const rad = Math.sqrt(1 - y * y);
       const th = i * 2.399963;
-      v.set(Math.cos(th) * rad * R, y * R, Math.sin(th) * rad * R);
+      v.set(Math.cos(th) * rad * R * 0.999, y * R * 0.999, Math.sin(th) * rad * R * 0.999);
       pos.set([v.x, v.y, v.z], i * 3);
     }
-    setDots(pos, null, 0.016);
+    globe.add(makeDots(pos, null, 0.015, 0.5));
   }
 
   function eqToVec3(lat, lng, r, out) {
@@ -110,13 +105,20 @@ export function initHeroGlobe(canvas) {
       else tmp.copy(sand).offsetHSL(0, 0, (Math.random() - 0.5) * 0.1);
       col.set([tmp.r, tmp.g, tmp.b], i * 3);
     }
-    setDots(pos, col, 0.02);
+    if (landPoints) {
+      globe.remove(landPoints);
+      landPoints.geometry.dispose();
+      landPoints.material.dispose();
+    }
+    landPoints = makeDots(pos, col, 0.02, 0.95);
+    globe.add(landPoints);
+    return true;
   }
 
-  buildFallback();
+  buildOcean();
   try {
     if (buildEarth() === false) throw new Error('mask');
-  } catch { /* fallback */ }
+  } catch { /* solo océanos */ }
 
   // --- Luna orbitando ---
   const moonPivot = new THREE.Group();
