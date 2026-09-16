@@ -1,0 +1,521 @@
+[
+  {
+    "id": "cyrillic",
+    "region": "Europe",
+    "countries": [
+      "RU",
+      "UA",
+      "BG",
+      "RS",
+      "BY",
+      "MK",
+      "MN",
+      "KZ"
+    ],
+    "sample": "СТОП · РЕСТОРАН · ВУЛИЦЯ",
+    "rtl": false,
+    "es": {
+      "name": "Cirílico",
+      "look": "Letras rectas; В Н Р С Х parecen B H P C X pero son Ve, Ne, Erre, Ese, Ja. Pistas finas: UA usa і ї є ґ · RS usa ђ ћ џ љ њ · MN/KZ usan ө ү һ.",
+      "confuse": "В=Ve (no B), Н=Ne (no H), Р=erre (no P), С=ese (no C), Х=ja (no X). Sin Ω Ψ Θ no es griego."
+    },
+    "en": {
+      "name": "Cyrillic",
+      "look": "Straight letters; В Н Р С Х look like B H P C X but are Ve, En, Er, Es, Kha. Fine clues: UA uses і ї є ґ · RS uses ђ ћ џ љ њ · MN/KZ use ө ү һ.",
+      "confuse": "В=Ve (not B), Н=En (not H), Р=er (not P), С=es (not C), Х=kha (not X). Without Ω Ψ Θ it is not Greek."
+    },
+    "compare": [
+      {
+        "countries": [
+          "RU"
+        ],
+        "chars": "Ё Й Ы Э",
+        "es": "Base: Ё Й Ы Э exclusivas · dominios .ru",
+        "en": "Baseline: exclusive Ё Й Ы Э · .ru domains"
+      },
+      {
+        "countries": [
+          "UA"
+        ],
+        "chars": "і ї є ґ",
+        "es": "і ї є ґ (i con diéresis, ye y ge con gancho)",
+        "en": "і ї є ґ (dotted i, ye and hooked ge)"
+      },
+      {
+        "countries": [
+          "BG"
+        ],
+        "chars": "Щ Ъ",
+        "es": "Sin Й Ы Э Ё · Щ suena 'sht' · Ъ al final",
+        "en": "No Й Ы Э Ё · Щ sounds 'sht' · final Ъ"
+      },
+      {
+        "countries": [
+          "RS"
+        ],
+        "chars": "ђ ћ џ љ њ",
+        "es": "ђ ћ џ љ њ + convive con alfabeto latino · .rs",
+        "en": "ђ ћ џ љ њ + lives alongside Latin script · .rs"
+      },
+      {
+        "countries": [
+          "BY"
+        ],
+        "chars": "і ў",
+        "es": "і ў (u breve) característicos",
+        "en": "Characteristic і and ў (short u)"
+      },
+      {
+        "countries": [
+          "MK"
+        ],
+        "chars": "ѓ ќ ѕ",
+        "es": "ѓ ќ ѕ (gje, kje, dze)",
+        "en": "ѓ ќ ѕ (gje, kje, dze)"
+      },
+      {
+        "countries": [
+          "MN"
+        ],
+        "chars": "ө ү",
+        "es": "ө ү + mucho espacio y cirílico vertical en sellos",
+        "en": "ө ү + wide spacing, vertical script on seals"
+      },
+      {
+        "countries": [
+          "KZ"
+        ],
+        "chars": "ә ғ қ ң ұ һ",
+        "es": "Nueve extras: ә ғ қ ң ө ұ ү һ і",
+        "en": "Nine extras: ә ғ қ ң ө ұ ү һ і"
+      }
+    ]
+  },
+  {
+    "id": "devanagari",
+    "region": "Asia",
+    "countries": [
+      "IN",
+      "NP"
+    ],
+    "sample": "मुंबई · स्वागत · सड़क",
+    "rtl": false,
+    "es": {
+      "name": "Devanagari (hindi)",
+      "look": "Línea horizontal continua arriba (shirorekha) de la que cuelgan las letras. India (hindi/marathi) y Nepal.",
+      "confuse": "Bengalí parecido pero más curvo; tamil y telugu no tienen la línea superior."
+    },
+    "en": {
+      "name": "Devanagari (Hindi)",
+      "look": "Continuous horizontal headline (shirorekha) that letters hang from. India (Hindi/Marathi) and Nepal.",
+      "confuse": "Bengali looks similar but rounder; Tamil and Telugu lack the headline."
+    },
+    "compare": [
+      {
+        "countries": [
+          "IN"
+        ],
+        "chars": "स्वागत",
+        "es": "Hindi/maratí + inglés por todas partes · matrículas con estado",
+        "en": "Hindi/Marathi + English everywhere · state-coded plates"
+      },
+      {
+        "countries": [
+          "NP"
+        ],
+        "chars": "नेपाल",
+        "es": "Menos inglés · bandera de doble banderín · +977",
+        "en": "Less English · double-pennant flag · +977"
+      }
+    ]
+  },
+  {
+    "id": "thai",
+    "region": "Asia",
+    "countries": [
+      "TH"
+    ],
+    "sample": "กรุงเทพฯ · สวัสดี · ถนน",
+    "rtl": false,
+    "es": {
+      "name": "Tailandés",
+      "look": "Bucles y círculos encadenados, sin espacios entre palabras, marcas de tono arriba y abajo. Solo Tailandia.",
+      "confuse": "Lao muy parecido pero más redondo y simple; jemer con más florituras y puntos."
+    },
+    "en": {
+      "name": "Thai",
+      "look": "Chained loops and circles, no spaces between words, tone marks above and below. Thailand only.",
+      "confuse": "Lao is very similar but rounder and simpler; Khmer has more flourishes and dots."
+    }
+  },
+  {
+    "id": "chinese-simp",
+    "region": "Asia",
+    "countries": [
+      "CN",
+      "SG"
+    ],
+    "sample": "北京 · 上海 · 出口",
+    "rtl": false,
+    "es": {
+      "name": "Chino simplificado",
+      "look": "Trazos reducidos (门 en vez de 門, 国 en vez de 國). China continental y Singapur.",
+      "confuse": "HK/TW usan tradicional con más trazos; si ves 門 臺 龍 no es simplificado."
+    },
+    "en": {
+      "name": "Simplified Chinese",
+      "look": "Reduced strokes (门 instead of 門, 国 instead of 國). Mainland China and Singapore.",
+      "confuse": "HK/TW use traditional with more strokes; if you see 門 臺 龍 it is not simplified."
+    },
+    "compare": [
+      {
+        "countries": [
+          "CN"
+        ],
+        "chars": "门 国",
+        "es": "Trazos reducidos · casi sin inglés (cobertura limitada)",
+        "en": "Reduced strokes · almost no English (limited coverage)"
+      },
+      {
+        "countries": [
+          "SG"
+        ],
+        "chars": "门 + English",
+        "es": "Simplificado + inglés + malayo/tamil en lo oficial",
+        "en": "Simplified + English + Malay/Tamil on official signs"
+      }
+    ]
+  },
+  {
+    "id": "chinese-trad",
+    "region": "Asia",
+    "countries": [
+      "TW",
+      "HK",
+      "MO"
+    ],
+    "sample": "臺灣 · 香港 · 龍門",
+    "rtl": false,
+    "es": {
+      "name": "Chino tradicional (TW/HK)",
+      "look": "Trazos completos (門, 臺, 龍). TW: prefijo +886 y a veces zhuyin ㄅㄆㄇㄈ. HK: caracteres cantoneses 嘅 咗 呢 + inglés por todas partes.",
+      "confuse": "El simplificado tiene menos trazos. Mucho inglés + tradicional = Hong Kong; +886 = Taiwán."
+    },
+    "en": {
+      "name": "Traditional Chinese (TW/HK)",
+      "look": "Full strokes (門, 臺, 龍). TW: +886 prefix and sometimes zhuyin ㄅㄆㄇㄈ. HK: Cantonese characters 嘅 咗 呢 + English everywhere.",
+      "confuse": "Simplified has fewer strokes. Lots of English + traditional = Hong Kong; +886 = Taiwan."
+    },
+    "compare": [
+      {
+        "countries": [
+          "TW"
+        ],
+        "chars": "ㄅㄆㄇㄈ",
+        "es": "Tradicional + zhuyin a veces · +886 · sin cantonés",
+        "en": "Traditional + occasional zhuyin · +886 · no Cantonese"
+      },
+      {
+        "countries": [
+          "HK"
+        ],
+        "chars": "嘅 咗 呢",
+        "es": "Tradicional + cantonés + inglés en todo",
+        "en": "Traditional + Cantonese + English everywhere"
+      },
+      {
+        "countries": [
+          "MO"
+        ],
+        "chars": "Português",
+        "es": "Tradicional + portugués en señales (único) · +853",
+        "en": "Traditional + Portuguese on signs (unique) · +853"
+      }
+    ]
+  },
+  {
+    "id": "korean",
+    "region": "Asia",
+    "countries": [
+      "KR"
+    ],
+    "sample": "서울 · 감사합니다 · 출구",
+    "rtl": false,
+    "es": {
+      "name": "Coreano (hangul)",
+      "look": "Círculos (ㅇ ㅎ) y cuadrados (ㅁ ㅂ ㅍ) ensamblados en bloques silábicos. Solo Corea del Sur.",
+      "confuse": "Nada se le parece: si ves círculos perfectos entre bloques, es Corea."
+    },
+    "en": {
+      "name": "Korean (Hangul)",
+      "look": "Circles (ㅇ ㅎ) and squares (ㅁ ㅂ ㅍ) assembled into syllable blocks. South Korea only.",
+      "confuse": "Nothing looks like it: if you see perfect circles inside blocks, it is Korea."
+    }
+  },
+  {
+    "id": "japanese",
+    "region": "Asia",
+    "countries": [
+      "JP"
+    ],
+    "sample": "東京 · ありがとう · 出口",
+    "rtl": false,
+    "es": {
+      "name": "Japonés",
+      "look": "Mezcla de 3: kanji complejos (東), hiragana curvo (ぁぃぅえお) y katakana anguloso (アイウエオ).",
+      "confuse": "Kanji solo = chino. Si hay kana curvo entre kanjis, es Japón seguro."
+    },
+    "en": {
+      "name": "Japanese",
+      "look": "Mix of 3: complex kanji (東), curvy hiragana (ぁぃぅえお) and angular katakana (アイウエオ).",
+      "confuse": "Kanji alone = Chinese. If curvy kana sits between kanji, it is Japan for sure."
+    }
+  },
+  {
+    "id": "arabic",
+    "region": "Middle East",
+    "countries": [
+      "SA",
+      "EG",
+      "AE",
+      "JO",
+      "MA",
+      "DZ",
+      "TN",
+      "IQ"
+    ],
+    "sample": "القاهرة · مخرج · شكرا",
+    "rtl": true,
+    "es": {
+      "name": "Árabe",
+      "look": "De derecha a izquierda, letras ligadas con puntos arriba/abajo. Todo MENA. Persa/urdu añaden 4 letras (پ چ ژ گ).",
+      "confuse": "Hebreo también va RTL pero son bloques cuadrados sin ligar. Persa ≈ árabe + پ چ ژ گ."
+    },
+    "en": {
+      "name": "Arabic",
+      "look": "Right to left, joined letters with dots above/below. All MENA. Persian/Urdu add 4 letters (پ چ ژ گ).",
+      "confuse": "Hebrew is also RTL but uses square unjoined blocks. Persian ≈ Arabic + پ چ ژ گ."
+    },
+    "compare": [
+      {
+        "countries": [
+          "SA"
+        ],
+        "chars": "+966",
+        "es": "Clásico + matrículas con escudo",
+        "en": "Classical + shield plates"
+      },
+      {
+        "countries": [
+          "EG"
+        ],
+        "chars": "أ + ABC",
+        "es": "Matrículas con cifras árabes + letras latinas · +20",
+        "en": "Plates with Arabic numerals + Latin letters · +20"
+      },
+      {
+        "countries": [
+          "AE"
+        ],
+        "chars": "+971",
+        "es": "Árabe + inglés · matrículas por emirato",
+        "en": "Arabic + English · per-emirate plates"
+      },
+      {
+        "countries": [
+          "JO"
+        ],
+        "chars": "JO",
+        "es": "Matrículas con franja JO · +962",
+        "en": "Plates with JO band · +962"
+      },
+      {
+        "countries": [
+          "MA",
+          "DZ",
+          "TN"
+        ],
+        "chars": "Français",
+        "es": "Francés en señales = Magreb · +212 MA · +213 DZ · +216 TN",
+        "en": "French on signs = Maghreb · +212 MA · +213 DZ · +216 TN"
+      },
+      {
+        "countries": [
+          "IQ"
+        ],
+        "chars": "+964",
+        "es": "Árabe + kurdo en el norte",
+        "en": "Arabic + Kurdish in the north"
+      }
+    ]
+  },
+  {
+    "id": "greek",
+    "region": "Europe",
+    "countries": [
+      "GR",
+      "CY"
+    ],
+    "sample": "ΑΘΗΝΑ · ΟΔΟΣ · ΕΞΟΔΟΣ",
+    "rtl": false,
+    "es": {
+      "name": "Griego",
+      "look": "Ω Ψ Θ Δ Ξ Φ en mayúsculas de señales. Grecia y Chipre (allí mezclado con turco).",
+      "confuse": "Se parece al cirílico, pero Ω Ψ Θ no existen en cirílico."
+    },
+    "en": {
+      "name": "Greek",
+      "look": "Ω Ψ Θ Δ Ξ Φ in sign capitals. Greece and Cyprus (there mixed with Turkish).",
+      "confuse": "Resembles Cyrillic, but Ω Ψ Θ do not exist in Cyrillic."
+    },
+    "compare": [
+      {
+        "countries": [
+          "GR"
+        ],
+        "chars": "Ω Ψ Θ",
+        "es": "Griego solo · matrículas banda GR",
+        "en": "Greek only · GR-banded plates"
+      },
+      {
+        "countries": [
+          "CY"
+        ],
+        "chars": "Ω + Türkçe",
+        "es": "Griego + turco en señales · matrículas CY",
+        "en": "Greek + Turkish on signs · CY plates"
+      }
+    ]
+  },
+  {
+    "id": "hebrew",
+    "region": "Middle East",
+    "countries": [
+      "IL"
+    ],
+    "sample": "ירושלים · תודה · יציאה",
+    "rtl": true,
+    "es": {
+      "name": "Hebreo",
+      "look": "De derecha a izquierda, bloques cuadrados sin vocales ni ligaduras. Solo Israel.",
+      "confuse": "Árabe también va RTL pero es curvo y ligado; el hebreo es cuadrado y separado."
+    },
+    "en": {
+      "name": "Hebrew",
+      "look": "Right to left, square blocks with no vowels or joins. Israel only.",
+      "confuse": "Arabic is also RTL but curvy and joined; Hebrew is square and separated."
+    }
+  },
+  {
+    "id": "latin-marks",
+    "region": "Europe",
+    "countries": [
+      "ES",
+      "DK",
+      "NO",
+      "SE",
+      "FI",
+      "DE",
+      "PL",
+      "CZ",
+      "PT",
+      "FR",
+      "TR"
+    ],
+    "sample": "ñ ø ł ů ä ç ğ",
+    "rtl": false,
+    "es": {
+      "name": "Latino con marcas",
+      "look": "ñ ES/LATAM · ø æ DK/NO · ä ö SE/FI/DE · ł ą ę PL · ů ě ř CZ · ç PT/FR/TR · ğ ı sin puntos TR.",
+      "confuse": "Turco usa ç ğ ı pero sin tildes francesas; el húngaro dobla agudos (ő ű)."
+    },
+    "en": {
+      "name": "Latin with marks",
+      "look": "ñ ES/LATAM · ø æ DK/NO · ä ö SE/FI/DE · ł ą ę PL · ů ě ř CZ · ç PT/FR/TR · dotless ı and ğ TR.",
+      "confuse": "Turkish uses ç ğ ı but no French accents; Hungarian doubles them (ő ű)."
+    },
+    "compare": [
+      {
+        "countries": [
+          "ES"
+        ],
+        "chars": "ñ ¡!",
+        "es": "ñ + ¡! ¿? exclusivos",
+        "en": "ñ + ¡! ¿? exclusive"
+      },
+      {
+        "countries": [
+          "DK",
+          "NO"
+        ],
+        "chars": "ø æ å",
+        "es": "Iguales: decide por dominio .dk/.no y matrículas",
+        "en": "Identical: decide by .dk/.no domain and plates"
+      },
+      {
+        "countries": [
+          "SE"
+        ],
+        "chars": "ä ö å",
+        "es": "ä ö å · dominio .se",
+        "en": "ä ö å · .se domain"
+      },
+      {
+        "countries": [
+          "FI"
+        ],
+        "chars": "ä ö",
+        "es": "ä ö + finés con letras dobles (ii, aa)",
+        "en": "ä ö + Finnish double letters (ii, aa)"
+      },
+      {
+        "countries": [
+          "DE"
+        ],
+        "chars": "ä ö ü ß",
+        "es": "ä ö ü + ß (ss alta)",
+        "en": "ä ö ü + ß (tall ss)"
+      },
+      {
+        "countries": [
+          "PL"
+        ],
+        "chars": "ł ą ę",
+        "es": "ł ą ę ż ź ń ó ś ć",
+        "en": "ł ą ę ż ź ń ó ś ć"
+      },
+      {
+        "countries": [
+          "CZ"
+        ],
+        "chars": "ů ě ř",
+        "es": "ů ě ř š č ž ý á í é",
+        "en": "ů ě ř š č ž ý á í é"
+      },
+      {
+        "countries": [
+          "PT"
+        ],
+        "chars": "ç ã õ",
+        "es": "ç ã õ â ê ô à · sin ñ",
+        "en": "ç ã õ â ê ô à · no ñ"
+      },
+      {
+        "countries": [
+          "FR"
+        ],
+        "chars": "ç è ê",
+        "es": "ç è é ê ë î ï ô ù û · sin ñ ni ø",
+        "en": "ç è é ê ë î ï ô ù û · no ñ or ø"
+      },
+      {
+        "countries": [
+          "TR"
+        ],
+        "chars": "ğ ı",
+        "es": "ç ğ + ı sin punto · ö ü ş",
+        "en": "ç ğ + dotless ı · ö ü ş"
+      }
+    ]
+  }
+]

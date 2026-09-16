@@ -1,0 +1,23 @@
+{
+  "name": "geoguessr-guide",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Guía visual ES/EN para aprender GeoGuessr: postes, matrículas, bollards, líneas, idiomas, coches y paisajes. / Visual ES/EN guide to learn GeoGuessr.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview --port 4173",
+    "media": "node tools/download-media.mjs",
+    "media:manifest": "node tools/download-media.mjs --manifest-only"
+  },
+  "dependencies": {
+    "maplibre-gl": "^4.7.1",
+    "three": "^0.186.0"
+  },
+  "devDependencies": {
+    "sharp": "^0.34.2",
+    "vite": "^6.3.5"
+  },
+  "license": "MIT"
+}

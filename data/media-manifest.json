@@ -1,0 +1,32 @@
+{
+  "notes": "Imágenes 100% legales. Wikimedia Commons (ver file page). No Google Street View. URLs Special:FilePath son estables (sin hash).",
+  "items": [
+    {
+      "id": "plate-uk-photo",
+      "target": "public/img/plates/uk-white-yellow.webp",
+      "file": "British car number plates.jpg",
+      "author": "Kaihsu Tai (user Silberchen)",
+      "license": "CC BY-SA 3.0",
+      "source_page": "https://commons.wikimedia.org/wiki/File:British_car_number_plates.jpg",
+      "status": "downloaded"
+    },
+    {
+      "id": "plate-nl-photo",
+      "target": "public/img/plates/nl-yellow.webp",
+      "file": "Dutch license plate 05-GJV-1.JPG",
+      "author": "Dinsdagskind",
+      "license": "CC BY-SA 3.0",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Dutch_license_plate_05-GJV-1.JPG",
+      "status": "downloaded"
+    },
+    {
+      "id": "delineator-us-photo",
+      "target": "public/img/bollards/delineator-us.webp",
+      "file": "Delineator post (52677382218).jpg",
+      "author": "Oregon Department of Transportation (user Tm)",
+      "license": "CC BY 2.0",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Delineator_post_(52677382218).jpg",
+      "status": "downloaded"
+    }
+  ]
+}

@@ -1,0 +1,183 @@
+[
+  {
+    "arms": true,
+    "base": "#8a6b4a",
+    "continent": "Americas",
+    "countries": [
+      "US",
+      "CA"
+    ],
+    "en": "Wood with crossarm and grey transformer can. A North America classic.",
+    "es": "Madera con cruceta y transformador gris (bidón). Clásico de Norteamérica.",
+    "id": "us-wood",
+    "material": "wood"
+  },
+  {
+    "arms": true,
+    "base": "#7a5f42",
+    "continent": "Europe",
+    "countries": [
+      "GB",
+      "IE"
+    ],
+    "en": "Wood with several short crossarms. Typically British.",
+    "es": "Madera con varias crucetas cortas. Típico británico.",
+    "id": "uk-tele",
+    "material": "wood"
+  },
+  {
+    "arms": true,
+    "base": "#8a6b4a",
+    "continent": "Europe",
+    "countries": [
+      "SE",
+      "NO",
+      "FI"
+    ],
+    "en": "Tall, slim wood with a single crossarm. Nordic look.",
+    "es": "Madera alta y esbelta, cruceta simple. Aspecto nórdico.",
+    "id": "nordic-wood",
+    "material": "wood"
+  },
+  {
+    "arms": true,
+    "base": "#c9ced8",
+    "continent": "Europe",
+    "countries": [
+      "FR"
+    ],
+    "en": "Concrete with metal crossarm. Common in France.",
+    "es": "Hormigón con cruceta metálica. Frecuente en Francia.",
+    "id": "fr-concrete",
+    "material": "concrete"
+  },
+  {
+    "arms": true,
+    "base": "#c9ced8",
+    "continent": "Europe",
+    "countries": [
+      "DE",
+      "AT"
+    ],
+    "en": "Concrete, often with a double crossarm. Germany and Austria.",
+    "es": "Hormigón, a menudo con cruceta doble. Alemania y Austria.",
+    "id": "de-concrete",
+    "material": "concrete"
+  },
+  {
+    "arms": true,
+    "base": "#c9ced8",
+    "continent": "Europe",
+    "countries": [
+      "ES",
+      "PT"
+    ],
+    "en": "Concrete with crossarm. Very common across Iberia.",
+    "es": "Hormigón con cruceta. Muy frecuente en Iberia.",
+    "id": "iberia-concrete",
+    "material": "concrete"
+  },
+  {
+    "arms": true,
+    "base": "#bfc5d1",
+    "continent": "Asia",
+    "countries": [
+      "JP"
+    ],
+    "en": "Concrete tangled in wires and transformers. Japan.",
+    "es": "Hormigón enmarañado de cables y transformadores. Japón.",
+    "id": "jp-concrete",
+    "material": "concrete"
+  },
+  {
+    "arms": true,
+    "base": "#c9ced8",
+    "continent": "Asia",
+    "countries": [
+      "IN"
+    ],
+    "en": "Rough concrete with tangled low wires. India.",
+    "es": "Hormigón basto con cables bajos enredados. India.",
+    "id": "in-concrete",
+    "material": "concrete"
+  },
+  {
+    "arms": true,
+    "base": "#8a6b4a",
+    "continent": "Oceania",
+    "countries": [
+      "AU",
+      "NZ"
+    ],
+    "en": "Wood with a long crossarm. Australia and NZ.",
+    "es": "Madera con cruceta larga. Australia y NZ.",
+    "id": "au-wood",
+    "material": "wood"
+  },
+  {
+    "arms": true,
+    "base": "#c9ced8",
+    "continent": "Americas",
+    "countries": [
+      "BR"
+    ],
+    "en": "Concrete with crossarm. Common in Brazil.",
+    "es": "Hormigón con cruceta. Frecuente en Brasil.",
+    "id": "br-concrete",
+    "material": "concrete"
+  },
+  {
+    "arms": true,
+    "base": "#8a6b4a",
+    "continent": "Africa",
+    "countries": [
+      "ZA"
+    ],
+    "en": "Wood, often leaning. South Africa.",
+    "es": "Madera, a menudo inclinados. Sudáfrica.",
+    "id": "za-wood",
+    "material": "wood"
+  },
+  {
+    "arms": false,
+    "base": "#7d8aa0",
+    "continent": "Europe",
+    "countries": [
+      "ES",
+      "FR",
+      "IT"
+    ],
+    "en": "Metal lattice tower for high voltage. All over Europe.",
+    "es": "Torre metálica de celosía para alta tensión. Por toda Europa.",
+    "id": "eu-lattice",
+    "material": "metal",
+    "shape": "lattice"
+  },
+  {
+    "id": "es-ladder",
+    "continent": "Europe",
+    "countries": [
+      "ES"
+    ],
+    "material": "concrete",
+    "arms": true,
+    "shape": "ladder",
+    "base": "#c9ced8",
+    "es": "Hormigón con peldaños metálicos (escalera) para subir. Típico de España.",
+    "en": "Concrete with metal rungs (ladder) for climbing. Typical of Spain."
+  },
+  {
+    "id": "hu-holey",
+    "continent": "Europe",
+    "countries": [
+      "HU",
+      "RO"
+    ],
+    "material": "concrete",
+    "arms": true,
+    "shape": "holey",
+    "base": "#c9ced8",
+    "es": "Hormigón con agujeros rectangulares. Hungría y Rumanía.",
+    "en": "Concrete with rectangular holes. Hungary and Romania."
+  }
+]

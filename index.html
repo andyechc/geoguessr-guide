@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#141130" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="GeoGuessr Guide — Guía visual ES/EN" />
+  <meta property="og:description" content="Lee la calle. Clava el país. Matrículas, bollards, postes, idiomas y países con modelos 3D." />
+  <meta property="og:image" content="./og.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="GeoGuessr Guide — Guía visual ES/EN" />
+  <meta name="twitter:description" content="Lee la calle. Clava el país." />
+  <meta name="twitter:image" content="./og.png" />
+  <title>GeoGuessr Guide — Guía visual ES/EN</title>
+  <meta name="description" content="Guía visual en español e inglés para aprender GeoGuessr: matrículas, bollards, postes, prefijos, líneas, idiomas y paisajes. / Visual ES/EN guide to learn GeoGuessr." />
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+  <link rel="icon" type="image/png" sizes="512x512" href="./favicon.png" />
+  <link rel="apple-touch-icon" href="./favicon.png" />
+  <link rel="preload" as="image" href="./img/world-map.png" />
+  <link rel="stylesheet" href="./src/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topwrap">
+    <a class="brand" href="#/es" data-brand><i class="fa-solid fa-compass"></i> GeoGuessr Guide</a>
+    <div class="searchwrap">
+      <input id="search" type="search" autocomplete="off" data-i18n-ph="searchPh" placeholder="Buscar: poste, matrícula, bollard…" />
+      <kbd>/</kbd>
+    </div>
+    <div class="lang" role="group" aria-label="Language">
+      <button id="btn-es" class="active">ES</button>
+      <button id="btn-en">EN</button>
+    </div>
+    </div>
+  </header>
+  <nav class="sections" id="sections"></nav>
+
+  <main id="app" class="wrap"></main>
+
+  <footer class="wrap foot">
+    <p data-i18n="footLegal">Fotos propias (SVG) + Wikimedia Commons y Mapillary con atribución. Sin imágenes de Google Street View. Proyecto educativo, no afiliado a GeoGuessr AB.</p>
+    <p data-i18n="footBuilt">Globo y modelos 3D con Three.js · Construido con Vite</p>
+    <p><span data-i18n="footData">Datos de pistas verificados con</span> <a href="https://www.plonkit.net/guide" target="_blank" rel="noopener">Plonkit</a> · <a href="https://www.geocoach.me" target="_blank" rel="noopener">GeoCoach</a> · <a href="https://learnablemeta.com" target="_blank" rel="noopener">LearnableMeta</a> · <a href="https://www.geohints.com" target="_blank" rel="noopener">GeoHints</a></p>
+    <p><a href="#/es/attribution" data-i18n="footAttr">Ver atribuciones</a></p>
+    <p class="foot-made"><span data-i18n="footMade">Hecho por</span> <b>andyechc</b></p>
+  </footer>
+
+  <div class="lightbox" id="lightbox" hidden>
+    <button id="lb-close" aria-label="close"><i class="fa-solid fa-xmark"></i></button>
+    <img id="lb-img" alt="" />
+    <p id="lb-cap"></p>
+  </div>
+  <div class="cmap" id="cmp" hidden>
+    <div class="cmap-box" role="dialog" aria-modal="true">
+      <button id="cmp-close" aria-label="close"><i class="fa-solid fa-xmark"></i></button>
+      <div id="cmp-head"></div>
+      <div class="cmp-list" id="cmp-list"></div>
+    </div>
+  </div>
+  <div class="toast" id="toast" hidden></div>
+  <div class="bol3d-view" id="bol3d" hidden>
+    <div class="bol3d-box" role="dialog" aria-modal="true">
+      <button id="bol3d-close" aria-label="close"><i class="fa-solid fa-xmark"></i></button>
+      <canvas id="bol3d-canvas"></canvas>
+      <p id="bol3d-cap" class="muted"></p>
+      <p class="muted bol3d-hint">Arrastra para girar · scroll para zoom</p>
+    </div>
+  </div>
+  <div class="cmap" id="cmap" hidden>
+    <div class="cmap-box" role="dialog" aria-modal="true">
+      <button id="cmap-close" aria-label="close"><i class="fa-solid fa-xmark"></i></button>
+      <div id="cmap-head"></div>
+      <div class="cmap-frame" id="cmap-frame">
+        <img id="cmap-img" src="./img/world-map.png" alt="" />
+        <span class="cmap-pin" id="cmap-pin"></span>
+        <div class="cmap-zoom">
+          <button id="cmap-zin" aria-label="Zoom in"><i class="fa-solid fa-magnifying-glass-plus"></i></button>
+          <button id="cmap-zout" aria-label="Zoom out"><i class="fa-solid fa-magnifying-glass-minus"></i></button>
+        </div>
+      </div>
+      <p id="cmap-meta" class="muted"></p>
+    </div>
+  </div>
+
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>

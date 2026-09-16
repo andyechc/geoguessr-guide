@@ -1,0 +1,23 @@
+[
+  {
+    "id": "plate-uk-photo",
+    "target": "public/img/plates/uk-white-yellow.webp",
+    "author": "Kaihsu Tai (Wikimedia user Silberchen)",
+    "license": "CC BY-SA 3.0",
+    "source_page": "https://commons.wikimedia.org/wiki/File:British_car_number_plates.jpg"
+  },
+  {
+    "id": "plate-nl-photo",
+    "target": "public/img/plates/nl-yellow.webp",
+    "author": "Dinsdagskind",
+    "license": "CC BY-SA 3.0",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Dutch_license_plate_05-GJV-1.JPG"
+  },
+  {
+    "id": "delineator-us-photo",
+    "target": "public/img/bollards/delineator-us.webp",
+    "author": "Oregon Department of Transportation (Wikimedia user Tm)",
+    "license": "CC BY 2.0",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Delineator_post_(52677382218).jpg"
+  }
+]

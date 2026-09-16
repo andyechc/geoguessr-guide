@@ -1,0 +1,628 @@
+[
+  {
+    "id": "dk",
+    "continent": "Europe",
+    "countries": [
+      "DK"
+    ],
+    "base": "#f8fafc",
+    "top": "#facc15",
+    "bands": [],
+    "es": "Blanco con tope amarillo. Solo Dinamarca.",
+    "en": "White with yellow top. Denmark only."
+  },
+  {
+    "id": "au",
+    "continent": "Oceania",
+    "countries": [
+      "AU"
+    ],
+    "base": "#f8fafc",
+    "top": null,
+    "bands": [
+      {
+        "y": 42,
+        "h": 16,
+        "c": "#dc2626"
+      }
+    ],
+    "es": "Blanco con franja roja corta. Turquía se parece: mira el idioma.",
+    "en": "White with short red band. Turkey looks similar: check the language.",
+    "compare": [
+      {
+        "countries": [
+          "NZ"
+        ],
+        "chars": "franja completa",
+        "es": "Rojo de punta a punta = Nueva Zelanda. La australiana es corta.",
+        "en": "End-to-end red = New Zealand. Australia's is short."
+      },
+      {
+        "countries": [
+          "TR"
+        ],
+        "chars": "mismo + idioma",
+        "es": "Igual que AU pero en Asia: decide por alfabeto turco (ğ, ş, ı sin punto) y matrícula.",
+        "en": "Same as AU but in Asia: decide by Turkish alphabet (ğ, ş, dotless ı) and plates."
+      }
+    ]
+  },
+  {
+    "id": "nz",
+    "continent": "Oceania",
+    "countries": [
+      "NZ"
+    ],
+    "base": "#f8fafc",
+    "top": null,
+    "bands": [
+      {
+        "y": 8,
+        "h": 84,
+        "c": "#dc2626"
+      }
+    ],
+    "es": "Blanco con rojo de punta a punta. Duelo directo con Australia.",
+    "en": "White with end-to-end red. Direct duel with Australia.",
+    "compare": [
+      {
+        "countries": [
+          "AU"
+        ],
+        "chars": "franja corta",
+        "es": "Franja roja corta = Australia. La neozelandesa va de punta a punta.",
+        "en": "Short red band = Australia. New Zealand's runs end-to-end."
+      },
+      {
+        "countries": [
+          "TR"
+        ],
+        "chars": "mismo + Asia",
+        "es": "Igual pero en Turquía: confirma con idioma y matrícula TR.",
+        "en": "Same but in Turkey: confirm with language and TR plates."
+      }
+    ]
+  },
+  {
+    "id": "tr",
+    "continent": "Asia",
+    "countries": [
+      "TR"
+    ],
+    "base": "#f8fafc",
+    "top": null,
+    "bands": [
+      {
+        "y": 38,
+        "h": 22,
+        "c": "#dc2626"
+      }
+    ],
+    "es": "Como el australiano pero en Asia: confirma con alfabeto turco (ğ, ş) y matrícula con provincia.",
+    "en": "Like Australia's but in Asia: confirm with Turkish alphabet (ğ, ş) and province plates.",
+    "compare": [
+      {
+        "countries": [
+          "AU",
+          "NZ"
+        ],
+        "chars": "mismo + Oceanía",
+        "es": "Mismo bollard que AU/NZ pero en Turquía: el idioma (ğ, ş, ı sin punto) y la matrícula con provincia deciden.",
+        "en": "Same bollard as AU/NZ but in Turkey: language (ğ, ş, dotless ı) and province plates decide."
+      }
+    ]
+  },
+  {
+    "id": "uk",
+    "continent": "Europe",
+    "countries": [
+      "GB",
+      "IE"
+    ],
+    "base": "#111827",
+    "top": null,
+    "bands": [
+      {
+        "y": 40,
+        "h": 20,
+        "c": "#f8fafc"
+      }
+    ],
+    "es": "Negro con banda blanca reflectante. Típico de UK e Irlanda.",
+    "en": "Black with white reflective band. Typical of the UK and Ireland."
+  },
+  {
+    "id": "eu-red",
+    "continent": "Europe",
+    "countries": [
+      "DE",
+      "FR",
+      "ES",
+      "IT",
+      "NL",
+      "BE"
+    ],
+    "base": "#f8fafc",
+    "top": "#dc2626",
+    "bands": [],
+    "es": "Blanco con reflector rojo arriba. Genérico de Europa continental.",
+    "en": "White with red reflector on top. Generic continental Europe.",
+    "compare": [
+      {
+        "countries": [
+          "NL",
+          "DE",
+          "PL"
+        ],
+        "chars": "a rayas",
+        "es": "Con rayas rojas = Países Bajos, Alemania o Polonia (bollard a rayas).",
+        "en": "With red stripes = Netherlands, Germany or Poland (striped bollard)."
+      },
+      {
+        "countries": [
+          "PT"
+        ],
+        "chars": "banda negra",
+        "es": "Con banda negra diagonal = Portugal (reflector naranja; en España amarillo).",
+        "en": "With diagonal black band = Portugal (orange reflector; yellow in Spain)."
+      }
+    ]
+  },
+  {
+    "id": "eu-striped",
+    "continent": "Europe",
+    "countries": [
+      "NL",
+      "DE",
+      "PL"
+    ],
+    "base": "#f8fafc",
+    "top": null,
+    "bands": [
+      {
+        "y": 20,
+        "h": 14,
+        "c": "#dc2626"
+      },
+      {
+        "y": 44,
+        "h": 14,
+        "c": "#dc2626"
+      }
+    ],
+    "es": "Blanco con dos franjas rojas. Países Bajos, Alemania, Polonia.",
+    "en": "White with two red stripes. Netherlands, Germany, Poland.",
+    "compare": [
+      {
+        "countries": [
+          "DE",
+          "FR",
+          "ES",
+          "IT",
+          "NL",
+          "BE"
+        ],
+        "chars": "liso + rojo",
+        "es": "Blanco liso con solo reflector rojo = genérico EU.",
+        "en": "Plain white with only a red reflector = generic EU."
+      }
+    ]
+  },
+  {
+    "id": "is",
+    "continent": "Europe",
+    "countries": [
+      "IS"
+    ],
+    "base": "#facc15",
+    "top": null,
+    "bands": [
+      {
+        "y": 46,
+        "h": 18,
+        "c": "#9ca3af"
+      }
+    ],
+    "es": "Poste AMARILLO con reflector gris grande. Solo Islandia.",
+    "en": "YELLOW post with big grey reflector. Iceland only."
+  },
+  {
+    "id": "alberta",
+    "continent": "Americas",
+    "countries": [
+      "CA"
+    ],
+    "base": "#111827",
+    "top": null,
+    "bands": [
+      {
+        "y": 12,
+        "h": 18,
+        "c": "#f8fafc"
+      },
+      {
+        "y": 48,
+        "h": 18,
+        "c": "#f8fafc"
+      }
+    ],
+    "es": "Negro-blanco-negro-blanco = Alberta, Canadá. Pista regional buenísima.",
+    "en": "Black-white-black-white = Alberta, Canada. Great regional clue."
+  },
+  {
+    "id": "us-delin",
+    "continent": "Americas",
+    "countries": [
+      "US"
+    ],
+    "base": "#e2e8f0",
+    "top": "#f59e0b",
+    "bands": [],
+    "es": "Delineador gris con reflector ámbar. Carreteras USA.",
+    "en": "Gray delineator with amber reflector. USA highways."
+  },
+  {
+    "id": "us-constr",
+    "continent": "Americas",
+    "countries": [
+      "US",
+      "CA"
+    ],
+    "base": "#f97316",
+    "top": null,
+    "bands": [
+      {
+        "y": 36,
+        "h": 20,
+        "c": "#f8fafc"
+      }
+    ],
+    "es": "Naranja con banda blanca: obra o borde en Norteamérica.",
+    "en": "Orange with white band: roadworks or edge in North America."
+  },
+  {
+    "id": "mx",
+    "continent": "Americas",
+    "countries": [
+      "MX"
+    ],
+    "base": "#16a34a",
+    "top": null,
+    "bands": [
+      {
+        "y": 40,
+        "h": 16,
+        "c": "#f8fafc"
+      }
+    ],
+    "es": "Verde con reflectante blanco. México.",
+    "en": "Green with white reflector. Mexico."
+  },
+  {
+    "id": "fr-stone",
+    "continent": "Europe",
+    "countries": [
+      "FR"
+    ],
+    "base": "#9ca3af",
+    "top": "#dc2626",
+    "bands": [],
+    "es": "Mojón de piedra con tope rojo: carreteras antiguas de Francia.",
+    "en": "Stone marker with red top: old French roads."
+  },
+  {
+    "id": "se-snow",
+    "continent": "Europe",
+    "countries": [
+      "SE",
+      "NO",
+      "FI"
+    ],
+    "base": "#f97316",
+    "top": null,
+    "bands": [],
+    "es": "Palo naranja fino y alto: baliza de nieve nórdica. Invierno o norte.",
+    "en": "Tall thin orange stick: Nordic snow pole. Winter or far north."
+  },
+  {
+    "id": "za",
+    "continent": "Africa",
+    "countries": [
+      "ZA",
+      "NA"
+    ],
+    "base": "#f8fafc",
+    "top": null,
+    "bands": [
+      {
+        "y": 30,
+        "h": 40,
+        "c": "#facc15"
+      }
+    ],
+    "es": "Blanco con bloque amarillo grande. África austral (líneas de borde amarillas).",
+    "en": "White with big yellow block. Southern Africa (yellow edge lines)."
+  },
+  {
+    "id": "fi",
+    "continent": "Europe",
+    "countries": [
+      "FI"
+    ],
+    "base": "#f8fafc",
+    "top": null,
+    "bands": [
+      {
+        "y": 50,
+        "h": 70,
+        "c": "#111827"
+      }
+    ],
+    "es": "Poste blanco con panel NEGRO de reflectantes. Solo Finlandia.",
+    "en": "White post with BLACK reflector panel. Finland only."
+  },
+  {
+    "id": "jp",
+    "continent": "Asia",
+    "countries": [
+      "JP"
+    ],
+    "base": "#9aa3b2",
+    "top": null,
+    "bands": [
+      {
+        "y": 36,
+        "h": 26,
+        "c": "#f97316"
+      }
+    ],
+    "es": "Poste metálico gris con reflectores NARANJAS redondos delante (blancos detrás).",
+    "en": "Grey metal post with round ORANGE reflectors in front (white behind).",
+    "compare": [
+      {
+        "countries": [
+          "TW"
+        ],
+        "chars": "negro + amarillo",
+        "es": "Negro con franjas amarillas y más alto = Taiwán (amarillo delante, rojo detrás).",
+        "en": "Black with yellow stripes and taller = Taiwan (yellow front, red back)."
+      }
+    ]
+  },
+  {
+    "id": "tw",
+    "continent": "Asia",
+    "countries": [
+      "TW"
+    ],
+    "base": "#111827",
+    "top": null,
+    "bands": [
+      {
+        "y": 24,
+        "h": 36,
+        "c": "#facc15"
+      },
+      {
+        "y": 100,
+        "h": 36,
+        "c": "#facc15"
+      }
+    ],
+    "es": "Negro con franjas amarillas (en juego: diagonales), alto. Amarillo delante, rojo detrás. Más alto que el japonés.",
+    "en": "Black with yellow stripes (diagonal in game), tall. Yellow front, red back. Taller than Japan's.",
+    "compare": [
+      {
+        "countries": [
+          "JP"
+        ],
+        "chars": "gris + naranja",
+        "es": "Gris metálico bajo con naranja delante y blanco detrás = Japón.",
+        "en": "Low metallic grey with orange front and white back = Japan."
+      }
+    ]
+  },
+  {
+    "id": "si",
+    "continent": "Europe",
+    "countries": [
+      "SI"
+    ],
+    "base": "#f8fafc",
+    "top": "#111827",
+    "bands": [
+      {
+        "y": 64,
+        "h": 28,
+        "c": "#dc2626"
+      }
+    ],
+    "es": "Gorra NEGRA + rectángulo rojo delante (blanco detrás).",
+    "en": "BLACK cap + red rectangle in front (white behind)."
+  },
+  {
+    "id": "ch",
+    "continent": "Europe",
+    "countries": [
+      "CH"
+    ],
+    "base": "#f8fafc",
+    "top": null,
+    "bands": [
+      {
+        "y": 44,
+        "h": 34,
+        "c": "#111827"
+      }
+    ],
+    "es": "Franja negra horizontal recta + reflector blanco fino delante.",
+    "en": "Straight horizontal black stripe + thin white reflector in front.",
+    "compare": [
+      {
+        "countries": [
+          "IL"
+        ],
+        "chars": "negro diagonal",
+        "es": "Banda negra diagonal con blanco = Israel.",
+        "en": "Diagonal black band with white = Israel."
+      }
+    ]
+  },
+  {
+    "id": "ec",
+    "continent": "Americas",
+    "countries": [
+      "EC"
+    ],
+    "base": "#f8fafc",
+    "top": null,
+    "bands": [
+      {
+        "y": 52,
+        "h": 38,
+        "c": "#dc2626"
+      },
+      {
+        "y": 112,
+        "h": 38,
+        "c": "#dc2626"
+      }
+    ],
+    "es": "Hormigón blanco con dos rectángulos ROJOS grandes delante.",
+    "en": "White concrete with two big RED rectangles in front."
+  },
+  {
+    "id": "pt",
+    "continent": "Europe",
+    "countries": [
+      "PT"
+    ],
+    "base": "#f8fafc",
+    "top": null,
+    "bands": [
+      {
+        "y": 30,
+        "h": 52,
+        "c": "#111827"
+      },
+      {
+        "y": 84,
+        "h": 22,
+        "c": "#fb923c"
+      }
+    ],
+    "es": "Banda negra con reflector NARANJA (en España es amarillo).",
+    "en": "Black band with ORANGE reflector (yellow in Spain).",
+    "compare": [
+      {
+        "countries": [
+          "IL"
+        ],
+        "chars": "negro + blanco",
+        "es": "Banda negra con blanco (rectángulo delante, dos círculos detrás) = Israel.",
+        "en": "Black band with white (rectangle front, two circles behind) = Israel."
+      },
+      {
+        "countries": [
+          "DE",
+          "FR",
+          "ES",
+          "IT",
+          "NL",
+          "BE"
+        ],
+        "chars": "sin banda",
+        "es": "Blanco liso con reflector rojo, sin banda negra = genérico EU.",
+        "en": "Plain white with red reflector, no black band = generic EU."
+      }
+    ]
+  },
+  {
+    "id": "il",
+    "continent": "Asia",
+    "countries": [
+      "IL"
+    ],
+    "base": "#f8fafc",
+    "top": null,
+    "bands": [
+      {
+        "y": 62,
+        "h": 38,
+        "c": "#111827"
+      }
+    ],
+    "es": "Franja negra diagonal con blanco delante; dos círculos blancos detrás.",
+    "en": "Diagonal black stripe with white front; two white circles behind.",
+    "compare": [
+      {
+        "countries": [
+          "PT"
+        ],
+        "chars": "negro + naranja",
+        "es": "Banda negra con reflector NARANJA = Portugal.",
+        "en": "Black band with ORANGE reflector = Portugal."
+      },
+      {
+        "countries": [
+          "CH"
+        ],
+        "chars": "negro recto",
+        "es": "Franja negra RECTA con fino blanco = Suiza.",
+        "en": "STRAIGHT black stripe with thin white = Switzerland."
+      }
+    ]
+  },
+  {
+    "id": "bd",
+    "continent": "Asia",
+    "countries": [
+      "BD"
+    ],
+    "base": "#f8fafc",
+    "top": null,
+    "bands": [
+      {
+        "y": 28,
+        "h": 36,
+        "c": "#dc2626"
+      },
+      {
+        "y": 120,
+        "h": 36,
+        "c": "#dc2626"
+      }
+    ],
+    "es": "Cubo/cilindro de hormigón ROJO y blanco.",
+    "en": "RED and white concrete cube/cylinder.",
+    "compare": [
+      {
+        "countries": [
+          "AU"
+        ],
+        "chars": "poste + franja",
+        "es": "Poste blanco con franja roja corta = Australia. El cubo rojo-blanco macizo = Bangladés.",
+        "en": "White post with short red band = Australia. Solid red-white block = Bangladesh."
+      }
+    ]
+  },
+  {
+    "id": "it",
+    "continent": "Europe",
+    "countries": [
+      "IT",
+      "AL"
+    ],
+    "base": "#f8fafc",
+    "top": "#111827",
+    "bands": [
+      {
+        "y": 64,
+        "h": 28,
+        "c": "#dc2626"
+      }
+    ],
+    "es": "Cuña blanca con gorra NEGRA y rectángulo rojo delante (blanco detrás). Italia y Albania.",
+    "en": "White wedge with BLACK cap and red rectangle front (white behind). Italy and Albania."
+  }
+]

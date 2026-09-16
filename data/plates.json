@@ -1,0 +1,797 @@
+[
+  {
+    "iso": "GB",
+    "continent": "Europe",
+    "front": "#ffffff",
+    "rear": "#facc15",
+    "band": "none",
+    "format": "AB12 CDE",
+    "es": "Blanca delante + amarilla detrás. Sin banda EU en las antiguas; algunas llevan franja azul o verde a la izquierda.",
+    "en": "White front + yellow rear. No EU band on older ones; some carry a blue or green left strip."
+  },
+  {
+    "iso": "NL",
+    "continent": "Europe",
+    "front": "#facc15",
+    "rear": "#facc15",
+    "band": "eu",
+    "format": "12-AB-34",
+    "es": "Amarilla delante y detrás + banda azul NL. No confundir con Luxemburgo o Colombia: mira el continente.",
+    "en": "Yellow front and rear + blue NL band. Don't mix with Luxembourg or Colombia: check the continent."
+  },
+  {
+    "iso": "LU",
+    "continent": "Europe",
+    "front": "#facc15",
+    "rear": "#facc15",
+    "band": "eu",
+    "format": "AB 1234",
+    "es": "Amarilla ambas, idéntica a NL con el blur. El blur amarillo doble = NL o LU.",
+    "en": "Yellow both, identical to NL when blurred. Double-yellow blur = NL or LU."
+  },
+  {
+    "iso": "DE",
+    "continent": "Europe",
+    "front": "#ffffff",
+    "rear": "#ffffff",
+    "band": "eu",
+    "format": "B · AB 123",
+    "es": "Blanca con banda azul D. Código de ciudad al inicio (B Berlín, M Múnich): sirve para región.",
+    "en": "White with blue D band. City code at the start (B Berlin, M Munich): useful for region."
+  },
+  {
+    "iso": "FR",
+    "continent": "Europe",
+    "front": "#ffffff",
+    "rear": "#ffffff",
+    "band": "eu",
+    "format": "AB-123-CD",
+    "es": "Blanca con banda azul F + número de departamento a la derecha (ej. 75 París).",
+    "en": "White with blue F band + department number on the right (e.g. 75 Paris)."
+  },
+  {
+    "iso": "ES",
+    "continent": "Europe",
+    "front": "#ffffff",
+    "rear": "#ffffff",
+    "band": "eu",
+    "format": "1234 ABC",
+    "es": "Blanca con banda azul E, 4 cifras + 3 letras. Sin código regional desde 2000.",
+    "en": "White with blue E band, 4 digits + 3 letters. No regional code since 2000."
+  },
+  {
+    "iso": "PT",
+    "continent": "Europe",
+    "front": "#ffffff",
+    "rear": "#facc15",
+    "band": "eu",
+    "format": "12·AB·34",
+    "es": "Amarilla solo a la derecha (hasta 2020); las nuevas son blancas estándar EU.",
+    "en": "Yellow only on the right (until 2020); new ones are standard white EU."
+  },
+  {
+    "iso": "IT",
+    "continent": "Europe",
+    "front": "#ffffff",
+    "rear": "#ffffff",
+    "band": "dual",
+    "format": "AB 123 CD",
+    "es": "Corta delante + doble banda azul (izq. y der.). Contrasta con Albania: larga con doble banda.",
+    "en": "Short front + dual blue bands (left and right). Contrast Albania: long with dual bands."
+  },
+  {
+    "iso": "AL",
+    "continent": "Europe",
+    "front": "#ffffff",
+    "rear": "#ffffff",
+    "band": "dual",
+    "format": "AB 123 CD",
+    "es": "Larga con doble banda azul como Italia, pero formato largo delante y detrás.",
+    "en": "Long with dual blue bands like Italy, but long format front and rear."
+  },
+  {
+    "iso": "BE",
+    "continent": "Europe",
+    "front": "#ffffff",
+    "rear": "#ffffff",
+    "band": "eu",
+    "format": "1-ABC-234",
+    "es": "Blanca con letras rojas + banda azul B. El rojo sobre blanco es único en EU.",
+    "en": "White with red letters + blue B band. Red-on-white is unique in the EU."
+  },
+  {
+    "iso": "SE",
+    "continent": "Europe",
+    "front": "#ffffff",
+    "rear": "#ffffff",
+    "band": "eu",
+    "format": "ABC 12D",
+    "es": "Blanca con banda azul S. Tres letras + cifras; formato muy limpio.",
+    "en": "White with blue S band. Three letters + digits; very clean layout."
+  },
+  {
+    "iso": "DK",
+    "continent": "Europe",
+    "front": "#ffffff",
+    "rear": "#ffffff",
+    "band": "eu",
+    "format": "AB 12 345",
+    "es": "Blanca con banda azul DK y borde rojo fino (a veces invisible con blur).",
+    "en": "White with blue DK band and thin red outline (often invisible when blurred)."
+  },
+  {
+    "iso": "PL",
+    "continent": "Europe",
+    "front": "#ffffff",
+    "rear": "#ffffff",
+    "band": "eu",
+    "format": "AB 12345",
+    "es": "Blanca con banda azul; la primera letra indica la voivodía (región).",
+    "en": "White with blue band; the first letter indicates the voivodeship (region)."
+  },
+  {
+    "iso": "GR",
+    "continent": "Europe",
+    "front": "#ffffff",
+    "rear": "#ffffff",
+    "band": "eu",
+    "format": "ABP-1234",
+    "es": "Blanca con banda azul GR. Letras latinas compatibles con griego (ABEHKMNTYZ).",
+    "en": "White with blue GR band. Greek-compatible Latin letters (ABEHKMNTYZ)."
+  },
+  {
+    "iso": "TR",
+    "continent": "Asia",
+    "front": "#ffffff",
+    "rear": "#ffffff",
+    "band": "tr",
+    "format": "34 AB 123",
+    "es": "Blanca con banda azul TR (no EU). Los 2 primeros dígitos = provincia (34 Estambul).",
+    "en": "White with blue TR band (not EU). First 2 digits = province (34 Istanbul)."
+  },
+  {
+    "iso": "US",
+    "continent": "Americas",
+    "front": "#e2e8f0",
+    "rear": "#ffffff",
+    "band": "none",
+    "format": "ABC·1234",
+    "es": "Varían por estado; ~mitad exigen placa delantera. Diseños coloridos con nombre del estado.",
+    "en": "Vary by state; ~half require a front plate. Colorful designs with the state name."
+  },
+  {
+    "iso": "CA",
+    "continent": "Americas",
+    "front": "#ffffff",
+    "rear": "#ffffff",
+    "band": "none",
+    "format": "ABCD·123",
+    "es": "Por provincia, parecidas a USA pero con corona o logo provincial.",
+    "en": "By province, similar to the USA but with a crown or provincial logo."
+  },
+  {
+    "iso": "MX",
+    "continent": "Americas",
+    "front": "#fef9c3",
+    "rear": "#fef9c3",
+    "band": "none",
+    "format": "ABC-12-34",
+    "es": "Cortas y coloridas, distintas por estado. El blur corto + color = pista fuerte.",
+    "en": "Short and colorful, different per state. Short + colorful blur = strong clue."
+  },
+  {
+    "iso": "BR",
+    "continent": "Americas",
+    "front": "#ffffff",
+    "rear": "#ffffff",
+    "band": "mercosur",
+    "format": "ABC1D23",
+    "es": "Patrón Mercosur con banda azul superior. Letras y cifras mezcladas.",
+    "en": "Mercosur pattern with blue top band. Mixed letters and digits."
+  },
+  {
+    "iso": "AR",
+    "continent": "Americas",
+    "front": "#ffffff",
+    "rear": "#ffffff",
+    "band": "mercosur",
+    "format": "AB 123 CD",
+    "es": "Mercosur con banda azul superior y sol argentino. Formato 2+3+2.",
+    "en": "Mercosur with blue top band and Argentine sun. 2+3+2 format."
+  },
+  {
+    "iso": "CO",
+    "continent": "Americas",
+    "front": "#facc15",
+    "rear": "#facc15",
+    "band": "none",
+    "format": "ABC·123",
+    "es": "Amarilla ambas con letras negras. En Europa el amarillo doble es NL/LU: decide por continente.",
+    "en": "Yellow both with black letters. In Europe double-yellow is NL/LU: decide by continent."
+  },
+  {
+    "iso": "EC",
+    "continent": "Americas",
+    "front": "#ffffff",
+    "rear": "#ffffff",
+    "band": "none",
+    "format": "ABC·1234",
+    "es": "Particulares blancas; naranja = comercial/taxi. Hay cortas y largas.",
+    "en": "Private cars white; orange = commercial/taxi. Short and long variants exist."
+  },
+  {
+    "iso": "JP",
+    "continent": "Asia",
+    "front": "#ffffff",
+    "rear": "#ffffff",
+    "band": "none",
+    "format": "品川 500 あ12-34",
+    "es": "Blanca con caracteres verdes + kanji de prefectura arriba. Inconfundible con cámara baja.",
+    "en": "White with green characters + prefecture kanji on top. Unmistakable with low camera."
+  },
+  {
+    "iso": "KR",
+    "continent": "Asia",
+    "front": "#ffffff",
+    "rear": "#ffffff",
+    "band": "none",
+    "format": "12가 3456",
+    "es": "Blanca con hangul (círculos y cuadrados). Formato con carácter coreano en medio.",
+    "en": "White with Hangul (circles and squares). Format with a Korean character in the middle."
+  },
+  {
+    "iso": "TH",
+    "continent": "Asia",
+    "front": "#ffffff",
+    "rear": "#ffffff",
+    "band": "none",
+    "format": "กท 1234",
+    "es": "Particulares blancas con thai; amarilla = taxi/comercial. En Laos la amarilla es normal.",
+    "en": "Private white with Thai script; yellow = taxi/commercial. In Laos yellow is normal."
+  },
+  {
+    "iso": "LA",
+    "continent": "Asia",
+    "front": "#facc15",
+    "rear": "#facc15",
+    "band": "none",
+    "format": "ກກ 1234",
+    "es": "Amarilla para coches normales (al revés que Tailandia). Script lao parecido al thai.",
+    "en": "Yellow for normal cars (opposite of Thailand). Lao script similar to Thai."
+  },
+  {
+    "iso": "BT",
+    "continent": "Asia",
+    "front": "#b91c1c",
+    "rear": "#b91c1c",
+    "band": "none",
+    "format": "BT·1234",
+    "es": "Fondo rojo con blanco: única en Asia. Ver rojo = Bután.",
+    "en": "Red background with white: unique in Asia. See red = Bhutan."
+  },
+  {
+    "iso": "IN",
+    "continent": "Asia",
+    "front": "#ffffff",
+    "rear": "#facc15",
+    "band": "none",
+    "format": "MH·12·AB·1234",
+    "es": "Privados: blanca delante + amarilla detrás (como UK). Letras de estado al inicio (MH, DL…).",
+    "en": "Private: white front + yellow rear (like the UK). State letters at the start (MH, DL…)."
+  },
+  {
+    "iso": "AU",
+    "continent": "Oceania",
+    "front": "#ffffff",
+    "rear": "#facc15",
+    "band": "none",
+    "format": "ABC·12D",
+    "es": "Varían por estado; muchas amarillas detrás. Suele verse con bollard blanco/rojo.",
+    "en": "Vary by state; many yellow at the rear. Usually seen with the white/red bollard."
+  },
+  {
+    "iso": "NZ",
+    "continent": "Oceania",
+    "front": "#ffffff",
+    "rear": "#ffffff",
+    "band": "none",
+    "format": "ABC123",
+    "es": "Blancas simples, formato corto. Combina con bollard de banda roja completa.",
+    "en": "Plain white, short format. Combine with the full-red-band bollard."
+  },
+  {
+    "iso": "ZA",
+    "continent": "Africa",
+    "front": "#ffffff",
+    "rear": "#facc15",
+    "band": "none",
+    "format": "CA·123·456",
+    "es": "Blanca delante + amarilla detrás; código de provincia al inicio o final.",
+    "en": "White front + yellow rear; province code at the start or end."
+  },
+  {
+    "iso": "KE",
+    "continent": "Africa",
+    "front": "#ffffff",
+    "rear": "#facc15",
+    "band": "none",
+    "format": "KAA·123B",
+    "es": "Formato Kxx + cifras. Suele aparecer con snorkel en el coche Google.",
+    "en": "Kxx + digits format. Usually appears with the snorkel on the Google car."
+  },
+  {
+    "iso": "IL",
+    "continent": "Asia",
+    "front": "#facc15",
+    "rear": "#facc15",
+    "band": "none",
+    "format": "12·345·67",
+    "es": "Amarillas con banda azul IL a la izquierda y texto hebreo pequeño.",
+    "en": "Yellow with blue IL band on the left and small Hebrew text."
+  },
+  {
+    "iso": "CH",
+    "continent": "Europe",
+    "front": "#ffffff",
+    "rear": "#ffffff",
+    "band": "none",
+    "format": "ZH·123456",
+    "es": "Sin banda EU (no es UE): código de cantón (ZH, BE…) + escudo suizo. Delantera pequeña.",
+    "en": "No EU band (not EU): canton code (ZH, BE…) + Swiss shield. Small front plate."
+  },
+  {
+    "iso": "IE",
+    "continent": "Europe",
+    "front": "#ffffff",
+    "rear": "#ffffff",
+    "band": "eu",
+    "format": "231·D·12345",
+    "es": "Banda IRL + formato año-condado-serie (231-D-12345) y condado en irlandés.",
+    "en": "IRL band + year-county-serial format (231-D-12345) with county name in Irish."
+  },
+  {
+    "iso": "NO",
+    "continent": "Europe",
+    "front": "#ffffff",
+    "rear": "#ffffff",
+    "band": "eu",
+    "format": "AB·12345",
+    "es": "Franja azul con BANDERA noruega (no estrellas EU), código N.",
+    "en": "Blue strip with Norwegian FLAG (not EU stars), N code."
+  },
+  {
+    "iso": "FI",
+    "continent": "Europe",
+    "front": "#ffffff",
+    "rear": "#ffffff",
+    "band": "eu",
+    "format": "ABC·123",
+    "es": "Banda FIN; formato fijo 3 letras-guion-3 cifras.",
+    "en": "FIN band; fixed 3 letters-dash-3 digits format."
+  },
+  {
+    "iso": "UA",
+    "continent": "Europe",
+    "front": "#ffffff",
+    "rear": "#ffffff",
+    "band": "eu",
+    "format": "AA·1234·BC",
+    "es": "Franja azul/amarilla con bandera UA; código de región al inicio.",
+    "en": "Blue/yellow strip with UA flag; region code first."
+  },
+  {
+    "iso": "RS",
+    "continent": "Europe",
+    "front": "#ffffff",
+    "rear": "#ffffff",
+    "band": "eu",
+    "format": "BG·123·AA",
+    "es": "Franja con bandera SRB (no estrellas); código de municipio (BG Belgrado).",
+    "en": "Strip with SRB flag (no stars); municipality code (BG Belgrade)."
+  },
+  {
+    "iso": "RO",
+    "continent": "Europe",
+    "front": "#ffffff",
+    "rear": "#ffffff",
+    "band": "eu",
+    "format": "B·12·ABC",
+    "es": "Banda RO; código de condado (B Bucarest).",
+    "en": "RO band; county code (B Bucharest)."
+  },
+  {
+    "iso": "AT",
+    "continent": "Europe",
+    "front": "#ffffff",
+    "rear": "#ffffff",
+    "band": "eu",
+    "format": "W·12345·A",
+    "es": "Banda A + tribanda rojiblanca arriba/abajo; código de distrito (W Viena).",
+    "en": "A band + red-white-red tribands top/bottom; district code (W Vienna)."
+  },
+  {
+    "iso": "CZ",
+    "continent": "Europe",
+    "front": "#ffffff",
+    "rear": "#ffffff",
+    "band": "eu",
+    "format": "1A2·3456",
+    "es": "Banda CZ; formato con cifra-letra.",
+    "en": "CZ band; digit-letter format."
+  },
+  {
+    "iso": "SK",
+    "continent": "Europe",
+    "front": "#ffffff",
+    "rear": "#ffffff",
+    "band": "eu",
+    "format": "BA·123·AB",
+    "es": "Banda SK + escudo eslovaco; BA = Bratislava.",
+    "en": "SK band + Slovak coat of arms; BA = Bratislava."
+  },
+  {
+    "iso": "HU",
+    "continent": "Europe",
+    "front": "#ffffff",
+    "rear": "#ffffff",
+    "band": "eu",
+    "format": "AB·CD·123",
+    "es": "Banda H; formato nuevo 2022: 4 letras + 3 cifras.",
+    "en": "H band; new 2022 format: 4 letters + 3 digits."
+  },
+  {
+    "iso": "BG",
+    "continent": "Europe",
+    "front": "#ffffff",
+    "rear": "#ffffff",
+    "band": "eu",
+    "format": "CB·1234·AB",
+    "es": "Banda BG; solo letras compatibles con cirílico.",
+    "en": "BG band; only Cyrillic-compatible letters."
+  },
+  {
+    "iso": "HR",
+    "continent": "Europe",
+    "front": "#ffffff",
+    "rear": "#ffffff",
+    "band": "eu",
+    "format": "ZG·1234·AB",
+    "es": "Banda HR + escudo croata; ZG = Zagreb.",
+    "en": "HR band + Croatian coat of arms; ZG = Zagreb."
+  },
+  {
+    "iso": "SI",
+    "continent": "Europe",
+    "front": "#ffffff",
+    "rear": "#ffffff",
+    "band": "eu",
+    "format": "LJ·AB·123",
+    "es": "Banda SLO + sello rojo; LJ = Liubliana.",
+    "en": "SLO band + red seal; LJ = Ljubljana."
+  },
+  {
+    "iso": "EE",
+    "continent": "Europe",
+    "front": "#ffffff",
+    "rear": "#ffffff",
+    "band": "eu",
+    "format": "123·ABC",
+    "es": "Banda EST; 3 cifras + 3 letras, sin región.",
+    "en": "EST band; 3 digits + 3 letters, no region."
+  },
+  {
+    "iso": "LV",
+    "continent": "Europe",
+    "front": "#ffffff",
+    "rear": "#ffffff",
+    "band": "eu",
+    "format": "AB·1234",
+    "es": "Banda LV.",
+    "en": "LV band."
+  },
+  {
+    "iso": "LT",
+    "continent": "Europe",
+    "front": "#ffffff",
+    "rear": "#ffffff",
+    "band": "eu",
+    "format": "ABC·123",
+    "es": "Banda LT.",
+    "en": "LT band."
+  },
+  {
+    "iso": "MT",
+    "continent": "Europe",
+    "front": "#ffffff",
+    "rear": "#ffffff",
+    "band": "eu",
+    "format": "ABC·123",
+    "es": "Banda M; prefijos por clase de vehículo.",
+    "en": "M band; class-based prefixes."
+  },
+  {
+    "iso": "CY",
+    "continent": "Europe",
+    "front": "#ffffff",
+    "rear": "#ffffff",
+    "band": "eu",
+    "format": "KAA·123",
+    "es": "Banda CY; 3 letras + 3 cifras.",
+    "en": "CY band; 3 letters + 3 digits."
+  },
+  {
+    "iso": "IS",
+    "continent": "Europe",
+    "front": "#ffffff",
+    "rear": "#ffffff",
+    "band": "eu",
+    "format": "AB·123",
+    "es": "Banda IS con bandera islandesa.",
+    "en": "IS band with Icelandic flag."
+  },
+  {
+    "iso": "ME",
+    "continent": "Europe",
+    "front": "#ffffff",
+    "rear": "#ffffff",
+    "band": "eu",
+    "format": "PG·AB·123",
+    "es": "Banda MNE; PG = Podgorica.",
+    "en": "MNE band; PG = Podgorica."
+  },
+  {
+    "iso": "MK",
+    "continent": "Europe",
+    "front": "#ffffff",
+    "rear": "#ffffff",
+    "band": "eu",
+    "format": "SK·1234·AB",
+    "es": "Banda NMK; SK = Skopie.",
+    "en": "NMK band; SK = Skopje."
+  },
+  {
+    "iso": "BA",
+    "continent": "Europe",
+    "front": "#ffffff",
+    "rear": "#ffffff",
+    "band": "eu",
+    "format": "A12·B·345",
+    "es": "Franja azul BIH SIN bandera ni estrellas.",
+    "en": "Blue BIH strip with NO flag or stars."
+  },
+  {
+    "iso": "BY",
+    "continent": "Europe",
+    "front": "#ffffff",
+    "rear": "#ffffff",
+    "band": "none",
+    "format": "1234·AB·1",
+    "es": "Bandera sobre el código, SIN franja azul.",
+    "en": "Flag above code, NO blue strip."
+  },
+  {
+    "iso": "MC",
+    "continent": "Europe",
+    "front": "#ffffff",
+    "rear": "#ffffff",
+    "band": "none",
+    "format": "1234",
+    "es": "Sin símbolo EU; pequeñas; existe variante roja.",
+    "en": "No EU symbol; small; red variant exists."
+  },
+  {
+    "iso": "SM",
+    "continent": "Europe",
+    "front": "#ffffff",
+    "rear": "#ffffff",
+    "band": "none",
+    "format": "A·1234",
+    "es": "¡Dígitos AZULES sobre blanco! Microestado.",
+    "en": "BLUE digits on white! Microstate.",
+    "ink": "#1d4ed8"
+  },
+  {
+    "iso": "AD",
+    "continent": "Europe",
+    "front": "#ffffff",
+    "rear": "#ffffff",
+    "band": "none",
+    "format": "A·1234",
+    "es": "Texto PRINCIPAT D'ANDORRA + código AND; pequeñas.",
+    "en": "'PRINCIPAT D'ANDORRA' text + AND code; small."
+  },
+  {
+    "iso": "SG",
+    "continent": "Asia",
+    "front": "#151515",
+    "rear": "#151515",
+    "band": "none",
+    "format": "SXX·1234X",
+    "es": "¡Blancas sobre NEGRO por defecto! (existe opción blanca/amarilla estilo EU). Formato S + letra de año.",
+    "en": "White-on-BLACK by default! (white/yellow EU-style option exists). S + year-letter format.",
+    "ink": "#ffffff"
+  },
+  {
+    "iso": "MY",
+    "continent": "Asia",
+    "front": "#151515",
+    "rear": "#151515",
+    "band": "none",
+    "format": "ABC·1234",
+    "es": "Blancas sobre negro como SG; prefijos por estado.",
+    "en": "White on black like SG; state prefixes.",
+    "ink": "#ffffff"
+  },
+  {
+    "iso": "HK",
+    "continent": "Asia",
+    "front": "#ffffff",
+    "rear": "#facc15",
+    "band": "none",
+    "format": "AB·1234",
+    "es": "Estilo UK: amarilla detrás. 2 letras + 3-4 cifras; se conduce por la izquierda.",
+    "en": "UK style: yellow rear. 2 letters + 3-4 digits; left-hand drive."
+  },
+  {
+    "iso": "TW",
+    "continent": "Asia",
+    "front": "#ffffff",
+    "rear": "#ffffff",
+    "band": "none",
+    "format": "ABC·5678",
+    "es": "Blancas sin condado; tamaño USA.",
+    "en": "White with no county; US size."
+  },
+  {
+    "iso": "KZ",
+    "continent": "Asia",
+    "front": "#ffffff",
+    "rear": "#ffffff",
+    "band": "eu",
+    "format": "011·AAA",
+    "es": "Banda KZ con bandera; código de región numérico a la derecha.",
+    "en": "KZ band with flag; numeric region code on the right."
+  },
+  {
+    "iso": "PH",
+    "continent": "Asia",
+    "front": "#ffffff",
+    "rear": "#ffffff",
+    "band": "none",
+    "format": "ABC·1234",
+    "es": "Blancas simples: 3 letras + 4 cifras.",
+    "en": "Plain white: 3 letters + 4 digits."
+  },
+  {
+    "iso": "ID",
+    "continent": "Asia",
+    "front": "#ffffff",
+    "rear": "#ffffff",
+    "band": "none",
+    "format": "B·1234·ABC",
+    "es": "Blancas desde 2022 (antes negras); código regional (B Yakarta).",
+    "en": "White since 2022 (black before); region code (B Jakarta)."
+  },
+  {
+    "iso": "PE",
+    "continent": "Americas",
+    "front": "#ffffff",
+    "rear": "#ffffff",
+    "band": "none",
+    "format": "ABC·123",
+    "es": "Cabecera PERÚ + bandera arriba.",
+    "en": "'PERÚ' header + flag on top."
+  },
+  {
+    "iso": "CL",
+    "continent": "Americas",
+    "front": "#ffffff",
+    "rear": "#ffffff",
+    "band": "none",
+    "format": "BB·BB·10",
+    "es": "Blancas: 4 letras + 2 cifras.",
+    "en": "White: 4 letters + 2 digits."
+  },
+  {
+    "iso": "UY",
+    "continent": "Americas",
+    "front": "#ffffff",
+    "rear": "#ffffff",
+    "band": "mercosur",
+    "format": "AB·1234",
+    "es": "Mercosur como AR/BR.",
+    "en": "Mercosur like AR/BR."
+  },
+  {
+    "iso": "BO",
+    "continent": "Americas",
+    "front": "#ffffff",
+    "rear": "#ffffff",
+    "band": "none",
+    "format": "1234·ABC",
+    "es": "¡Texto AZUL! Cabecera BOLIVIA + letra de departamento.",
+    "en": "BLUE text! BOLIVIA header + department letter.",
+    "ink": "#1d4ed8"
+  },
+  {
+    "iso": "GT",
+    "continent": "Americas",
+    "front": "#ffffff",
+    "rear": "#ffffff",
+    "band": "none",
+    "format": "P·123·ABC",
+    "es": "Leyenda 'Centro América'; P = particular.",
+    "en": "'Centro América' slogan; P = private."
+  },
+  {
+    "iso": "CR",
+    "continent": "Americas",
+    "front": "#ffffff",
+    "rear": "#ffffff",
+    "band": "none",
+    "format": "ABC·123",
+    "es": "COSTA RICA + CENTROAMERICA; ¡texto en rojo, azul o negro según clase!",
+    "en": "COSTA RICA + CENTROAMERICA; red, blue or black text by class!"
+  },
+  {
+    "iso": "NA",
+    "continent": "Africa",
+    "front": "#facc15",
+    "rear": "#facc15",
+    "band": "none",
+    "format": "N·123·AB",
+    "es": "¡AMARILLAS delante y detrás! Empiezan por N + región.",
+    "en": "YELLOW front and rear! Start with N + region."
+  },
+  {
+    "iso": "RW",
+    "continent": "Africa",
+    "front": "#ffffff",
+    "rear": "#facc15",
+    "band": "none",
+    "format": "RAA·123A",
+    "es": "Blanca delante, amarilla detrás; empiezan por R.",
+    "en": "White front, yellow rear; start with R."
+  },
+  {
+    "iso": "TN",
+    "continent": "Africa",
+    "front": "#151515",
+    "rear": "#151515",
+    "band": "none",
+    "format": "123·تونس·4567",
+    "es": "¡Blancas sobre NEGRO! con تونس (Túnez) en árabe en medio.",
+    "en": "White-on-BLACK with تونس (Tunisia) in Arabic in the middle.",
+    "ink": "#ffffff"
+  },
+  {
+    "iso": "BW",
+    "continent": "Africa",
+    "front": "#ffffff",
+    "rear": "#facc15",
+    "band": "none",
+    "format": "B·123·ABC",
+    "es": "Blanca delante, amarilla detrás; empiezan por B.",
+    "en": "White front, yellow rear; start with B."
+  },
+  {
+    "iso": "GH",
+    "continent": "Africa",
+    "front": "#ffffff",
+    "rear": "#ffffff",
+    "band": "none",
+    "format": "GR·1234·23",
+    "es": "Código de región (GR Acra) + AÑO de registro (23).",
+    "en": "Region code (GR Accra) + registration YEAR (23)."
+  },
+  {
+    "iso": "UG",
+    "continent": "Africa",
+    "front": "#ffffff",
+    "rear": "#facc15",
+    "band": "none",
+    "format": "UBA·123A",
+    "es": "Blanca delante, amarilla detrás, estilo británico.",
+    "en": "White front, yellow rear, British style."
+  }
+]

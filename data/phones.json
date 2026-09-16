@@ -1,0 +1,394 @@
+[
+  {
+    "iso": "ES",
+    "code": "+34",
+    "es": "Fijos por provincia (91 Madrid, 93 Barcelona); móviles 6/7 sin región.",
+    "en": "Landlines by province (91 Madrid, 93 Barcelona); mobiles 6/7 give no region.",
+    "continent": "Europe"
+  },
+  {
+    "iso": "FR",
+    "code": "+33",
+    "es": "01 París, 02 noroeste, 03 noreste, 04 sureste, 05 suroeste; móviles 06/07.",
+    "en": "01 Paris, 02 northwest, 03 northeast, 04 southeast, 05 southwest; mobiles 06/07.",
+    "continent": "Europe"
+  },
+  {
+    "iso": "IT",
+    "code": "+39",
+    "es": "Prefijos ordenados de norte a sur (02 Milán, 06 Roma, 081 Nápoles).",
+    "en": "Prefixes ordered north to south (02 Milan, 06 Rome, 081 Naples).",
+    "continent": "Europe"
+  },
+  {
+    "iso": "DE",
+    "code": "+49",
+    "es": "Por ciudad (30 Berlín, 89 Múnich, 40 Hamburgo).",
+    "en": "By city (30 Berlin, 89 Munich, 40 Hamburg).",
+    "continent": "Europe"
+  },
+  {
+    "iso": "GB",
+    "code": "+44",
+    "es": "Por ciudad (20 Londres, 121 Birmingham, 131 Edimburgo).",
+    "en": "By city (20 London, 121 Birmingham, 131 Edinburgh).",
+    "continent": "Europe"
+  },
+  {
+    "iso": "IE",
+    "code": "+353",
+    "es": "01 Dublín; resto por condado.",
+    "en": "01 Dublin; rest by county.",
+    "continent": "Europe"
+  },
+  {
+    "iso": "PT",
+    "code": "+351",
+    "es": "Fijos por zona (21 Lisboa, 22 Oporto).",
+    "en": "Landlines by area (21 Lisbon, 22 Porto).",
+    "continent": "Europe"
+  },
+  {
+    "iso": "NL",
+    "code": "+31",
+    "es": "Por ciudad (20 Ámsterdam, 10 Róterdam).",
+    "en": "By city (20 Amsterdam, 10 Rotterdam).",
+    "continent": "Europe"
+  },
+  {
+    "iso": "BE",
+    "code": "+32",
+    "es": "Por ciudad (2 Bruselas, 3 Amberes).",
+    "en": "By city (2 Brussels, 3 Antwerp).",
+    "continent": "Europe"
+  },
+  {
+    "iso": "LU",
+    "code": "+352",
+    "es": "País pequeño: código único, poca variación regional.",
+    "en": "Small country: single code, little regional variation.",
+    "continent": "Europe"
+  },
+  {
+    "iso": "CH",
+    "code": "+41",
+    "es": "Por zona (31 Berna, 44 Zúrich, 22 Ginebra).",
+    "en": "By area (31 Bern, 44 Zurich, 22 Geneva).",
+    "continent": "Europe"
+  },
+  {
+    "iso": "AT",
+    "code": "+43",
+    "es": "01 Viena; resto por región.",
+    "en": "01 Vienna; rest by region.",
+    "continent": "Europe"
+  },
+  {
+    "iso": "SE",
+    "code": "+46",
+    "es": "08 Estocolmo; resto por zona.",
+    "en": "08 Stockholm; rest by area.",
+    "continent": "Europe"
+  },
+  {
+    "iso": "NO",
+    "code": "+47",
+    "es": "Sin código de área clásico: 8 cifras.",
+    "en": "No classic area code: 8 digits.",
+    "continent": "Europe"
+  },
+  {
+    "iso": "DK",
+    "code": "+45",
+    "es": "8 cifras sin áreas (como Noruega).",
+    "en": "8 digits, no areas (like Norway).",
+    "continent": "Europe"
+  },
+  {
+    "iso": "FI",
+    "code": "+358",
+    "es": "09 Helsinki; móviles 4x/5x.",
+    "en": "09 Helsinki; mobiles 4x/5x.",
+    "continent": "Europe"
+  },
+  {
+    "iso": "IS",
+    "code": "+354",
+    "es": "7 cifras, sin áreas.",
+    "en": "7 digits, no areas.",
+    "continent": "Europe"
+  },
+  {
+    "iso": "PL",
+    "code": "+48",
+    "es": "Por ciudad (22 Varsovia, 12 Cracovia).",
+    "en": "By city (22 Warsaw, 12 Krakow).",
+    "continent": "Europe"
+  },
+  {
+    "iso": "CZ",
+    "code": "+420",
+    "es": "2 Praga; resto por región.",
+    "en": "2 Prague; rest by region.",
+    "continent": "Europe"
+  },
+  {
+    "iso": "SK",
+    "code": "+421",
+    "es": "2 Bratislava; resto por región.",
+    "en": "2 Bratislava; rest by region.",
+    "continent": "Europe"
+  },
+  {
+    "iso": "HU",
+    "code": "+36",
+    "es": "1 Budapest; resto por zona.",
+    "en": "1 Budapest; rest by area.",
+    "continent": "Europe"
+  },
+  {
+    "iso": "RO",
+    "code": "+40",
+    "es": "21 Bucarest; resto por condado.",
+    "en": "21 Bucharest; rest by county.",
+    "continent": "Europe"
+  },
+  {
+    "iso": "BG",
+    "code": "+359",
+    "es": "2 Sofía; resto por ciudad.",
+    "en": "2 Sofia; rest by city.",
+    "continent": "Europe"
+  },
+  {
+    "iso": "GR",
+    "code": "+30",
+    "es": "21 Atenas, 231 Tesalónica.",
+    "en": "21 Athens, 231 Thessaloniki.",
+    "continent": "Europe"
+  },
+  {
+    "iso": "HR",
+    "code": "+385",
+    "es": "01 Zagreb; costa 020/021/023.",
+    "en": "01 Zagreb; coast 020/021/023.",
+    "continent": "Europe"
+  },
+  {
+    "iso": "RS",
+    "code": "+381",
+    "es": "11 Belgrado; resto por ciudad.",
+    "en": "11 Belgrade; rest by city.",
+    "continent": "Europe"
+  },
+  {
+    "iso": "UA",
+    "code": "+380",
+    "es": "44 Kiev; este 057/062 por ciudad.",
+    "en": "44 Kyiv; east 057/062 by city.",
+    "continent": "Europe"
+  },
+  {
+    "iso": "TR",
+    "code": "+90",
+    "es": "212/216 Estambul (europea/asiática); 312 Ankara.",
+    "en": "212/216 Istanbul (European/Asian side); 312 Ankara.",
+    "continent": "Europe"
+  },
+  {
+    "iso": "RU",
+    "code": "+7",
+    "es": "495/499 Moscú, 812 San Petersburgo; el +7 se comparte con Kazajistán.",
+    "en": "495/499 Moscow, 812 Saint Petersburg; +7 is shared with Kazakhstan.",
+    "continent": "Europe"
+  },
+  {
+    "iso": "US",
+    "code": "+1",
+    "es": "NPA por estado/ciudad (212 NYC, 213 LA, 305 Miami). Clave para región.",
+    "en": "NPA by state/city (212 NYC, 213 LA, 305 Miami). Key for region.",
+    "continent": "Americas"
+  },
+  {
+    "iso": "CA",
+    "code": "+1",
+    "es": "416 Toronto, 514 Montreal, 604 Vancouver.",
+    "en": "416 Toronto, 514 Montreal, 604 Vancouver.",
+    "continent": "Americas"
+  },
+  {
+    "iso": "MX",
+    "code": "+52",
+    "es": "55 CDMX, 33 Guadalajara, 81 Monterrey.",
+    "en": "55 Mexico City, 33 Guadalajara, 81 Monterrey.",
+    "continent": "Americas"
+  },
+  {
+    "iso": "BR",
+    "code": "+55",
+    "es": "11 São Paulo, 21 Río, 31 Belo Horizonte.",
+    "en": "11 São Paulo, 21 Rio, 31 Belo Horizonte.",
+    "continent": "Americas"
+  },
+  {
+    "iso": "AR",
+    "code": "+54",
+    "es": "11 Buenos Aires; resto por ciudad.",
+    "en": "11 Buenos Aires; rest by city.",
+    "continent": "Americas"
+  },
+  {
+    "iso": "CL",
+    "code": "+56",
+    "es": "2 Santiago; resto por región.",
+    "en": "2 Santiago; rest by region.",
+    "continent": "Americas"
+  },
+  {
+    "iso": "CO",
+    "code": "+57",
+    "es": "601 Bogotá, 604 Medellín, 605 costa.",
+    "en": "601 Bogotá, 604 Medellín, 605 coast.",
+    "continent": "Americas"
+  },
+  {
+    "iso": "PE",
+    "code": "+51",
+    "es": "01 Lima; resto por departamento.",
+    "en": "01 Lima; rest by department.",
+    "continent": "Americas"
+  },
+  {
+    "iso": "EC",
+    "code": "+593",
+    "es": "02 Quito, 04 Guayaquil.",
+    "en": "02 Quito, 04 Guayaquil.",
+    "continent": "Americas"
+  },
+  {
+    "iso": "JP",
+    "code": "+81",
+    "es": "03 Tokio, 06 Osaka, 011 Sapporo. Los fijos delatan la prefectura.",
+    "en": "03 Tokyo, 06 Osaka, 011 Sapporo. Landlines reveal the prefecture.",
+    "continent": "Asia"
+  },
+  {
+    "iso": "KR",
+    "code": "+82",
+    "es": "02 Seúl, 051 Busan.",
+    "en": "02 Seoul, 051 Busan.",
+    "continent": "Asia"
+  },
+  {
+    "iso": "CN",
+    "code": "+86",
+    "es": "010 Pekín, 021 Shanghái, 020 Cantón.",
+    "en": "010 Beijing, 021 Shanghai, 020 Guangzhou.",
+    "continent": "Asia"
+  },
+  {
+    "iso": "TW",
+    "code": "+886",
+    "es": "02 Taipéi, 04 Taichung, 07 Kaohsiung. Códigos por condado: oro para región.",
+    "en": "02 Taipei, 04 Taichung, 07 Kaohsiung. County area codes: gold for region.",
+    "continent": "Asia"
+  },
+  {
+    "iso": "TH",
+    "code": "+66",
+    "es": "02 Bangkok; resto por zona.",
+    "en": "02 Bangkok; rest by area.",
+    "continent": "Asia"
+  },
+  {
+    "iso": "VN",
+    "code": "+84",
+    "es": "24 Hanói, 28 Ho Chi Minh.",
+    "en": "24 Hanoi, 28 Ho Chi Minh.",
+    "continent": "Asia"
+  },
+  {
+    "iso": "ID",
+    "code": "+62",
+    "es": "021 Yakarta, 031 Surabaya.",
+    "en": "021 Jakarta, 031 Surabaya.",
+    "continent": "Asia"
+  },
+  {
+    "iso": "MY",
+    "code": "+60",
+    "es": "03 Kuala Lumpur; Sabah/Sarawak 08x.",
+    "en": "03 Kuala Lumpur; Sabah/Sarawak 08x.",
+    "continent": "Asia"
+  },
+  {
+    "iso": "SG",
+    "code": "+65",
+    "es": "8 cifras, sin áreas (ciudad-estado).",
+    "en": "8 digits, no areas (city-state).",
+    "continent": "Asia"
+  },
+  {
+    "iso": "IN",
+    "code": "+91",
+    "es": "11 Delhi, 22 Mumbai, 80 Bangalore.",
+    "en": "11 Delhi, 22 Mumbai, 80 Bangalore.",
+    "continent": "Asia"
+  },
+  {
+    "iso": "ZA",
+    "code": "+27",
+    "es": "011 Johannesburgo, 021 Ciudad del Cabo.",
+    "en": "011 Johannesburg, 021 Cape Town.",
+    "continent": "Africa"
+  },
+  {
+    "iso": "KE",
+    "code": "+254",
+    "es": "020 Nairobi; móviles 07xx.",
+    "en": "020 Nairobi; mobiles 07xx.",
+    "continent": "Africa"
+  },
+  {
+    "iso": "EG",
+    "code": "+20",
+    "es": "02 El Cairo, 03 Alejandría.",
+    "en": "02 Cairo, 03 Alexandria.",
+    "continent": "Africa"
+  },
+  {
+    "iso": "AU",
+    "code": "+61",
+    "es": "02 Sídney, 03 Melbourne, 07 Brisbane, 08 oeste.",
+    "en": "02 Sydney, 03 Melbourne, 07 Brisbane, 08 west.",
+    "continent": "Oceania"
+  },
+  {
+    "iso": "NZ",
+    "code": "+64",
+    "es": "09 Auckland, 03 sur, 04 Wellington.",
+    "en": "09 Auckland, 03 south, 04 Wellington.",
+    "continent": "Oceania"
+  },
+  {
+    "iso": "IL",
+    "code": "+972",
+    "es": "02 Jerusalén, 03 Tel Aviv.",
+    "en": "02 Jerusalem, 03 Tel Aviv.",
+    "continent": "Asia"
+  },
+  {
+    "iso": "AE",
+    "code": "+971",
+    "es": "02 Abu Dabi, 04 Dubái.",
+    "en": "02 Abu Dhabi, 04 Dubai.",
+    "continent": "Asia"
+  },
+  {
+    "iso": "SA",
+    "code": "+966",
+    "es": "011 Riad, 012 Yeda.",
+    "en": "011 Riyadh, 012 Jeddah.",
+    "continent": "Asia"
+  }
+]
