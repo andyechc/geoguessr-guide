@@ -1,16 +1,13 @@
-// Bollards y postes en 3D (three.js) estilo GeoGuessr.
+// Bollards en 3D (three.js) estilo GeoGuessr.
 // - Thumbs: un solo renderer offscreen renderiza cada modelo a PNG (lazy).
 // - Visor: modal interactivo con arrastre para rotar + zoom.
 // Sin OrbitControls: rotación manual con inercia, más ligero.
 import * as THREE from 'three';
 import bollards from '../data/bollards.json';
-import poles from '../data/poles.json';
 
 const byId = new Map(bollards.map((b) => [b.id, b]));
-const byPoleId = new Map(poles.map((p) => [p.id, p]));
 const thumbCache = new Map();
 
-// Encuadre con aire (los postes son más altos: cámara más lejos)
 
 function mat(color, rough = 0.55) {
   return new THREE.MeshStandardMaterial({ color: new THREE.Color(color), roughness: rough, metalness: 0.08 });
@@ -66,72 +63,12 @@ export function buildBollard(b) {
   return g;
 }
 
-// ---------- postes ----------
-export function buildPole(p) {
-  const g = new THREE.Group();
-  const base = new THREE.Color(p.base || '#c9ced8');
-  if (p.shape === 'lattice') {
-    const m = mat(base, 0.5);
-    for (const s of [-1, 1]) {
-      const leg = new THREE.Mesh(new THREE.BoxGeometry(0.09, 2.4, 0.09), m);
-      leg.position.set(s * 0.22, 0.1, 0);
-      leg.rotation.z = -s * 0.09;
-      g.add(leg);
-    }
-    for (let i = 0; i < 4; i++) {
-      const bar = new THREE.Mesh(new THREE.BoxGeometry(0.5 - i * 0.04, 0.05, 0.05), m);
-      bar.position.y = -0.6 + i * 0.5;
-      g.add(bar);
-    }
-    const top = new THREE.Mesh(new THREE.BoxGeometry(0.9, 0.07, 0.07), m);
-    top.position.y = 1.22;
-    g.add(top);
-    return g;
-  }
-  const post = new THREE.Mesh(new THREE.BoxGeometry(0.4, 2.3, 0.4), mat(base, 0.7));
-  post.position.y = 0.1;
-  g.add(post);
-  if (p.shape === 'holey') {
-    const holeM = mat('#141130', 0.9);
-    for (let i = 0; i < 3; i++) {
-      const hole = new THREE.Mesh(new THREE.BoxGeometry(0.16, 0.22, 0.02), holeM);
-      hole.position.set(0, 0.5 + i * 0.4, 0.2);
-      g.add(hole);
-    }
-  }
-  if (p.shape === 'ladder') {
-    const rungM = mat('#3a3f55', 0.5);
-    for (let i = 0; i < 5; i++) {
-      const rung = new THREE.Mesh(new THREE.BoxGeometry(0.3, 0.035, 0.035), rungM);
-      rung.position.set(0, -0.3 + i * 0.35, 0.22);
-      g.add(rung);
-    }
-  }
-  if (p.arms) {
-    const arm = new THREE.Mesh(new THREE.BoxGeometry(1.05, 0.08, 0.08), mat(base, 0.7));
-    arm.position.y = 1.05;
-    g.add(arm);
-    const insM = mat('#1c1840', 0.5);
-    for (const x of [-0.38, 0, 0.38]) {
-      const ins = new THREE.Mesh(new THREE.CylinderGeometry(0.035, 0.035, 0.1, 10), insM);
-      ins.position.set(x, 1.13, 0);
-      g.add(ins);
-    }
-  }
-  return g;
-}
-
-function poleCaption(p, lang) {
-  return `<b>${p.countries.join(' · ')}</b> — ${p[lang] || ''}`;
-}
-
 function bolCaption(b, lang) {
   return `<b>${b.countries.join(' · ')}</b> — ${b[lang] || ''}`;
 }
 
 const REG = {
   bol: { byId, build: buildBollard, cap: bolCaption, imgAttr: 'data-bol3d', btnClass: 'bol3d', thumbCam: [1.8, 0.7, 4.2], viewCam: [1.8, 0.7, 4.2] },
-  pol: { byId: byPoleId, build: buildPole, cap: poleCaption, imgAttr: 'data-pol3d', btnClass: 'pol3d', thumbCam: [2.2, 0.9, 5.6], viewCam: [2.2, 0.9, 5.6] },
 };
 
 function disposeGroup(g) {
@@ -182,7 +119,7 @@ export function bindBollard3D(scope) {
       const img = imgs.shift();
       if (!img.isConnected) continue;
       try {
-        const kind = img.hasAttribute('data-pol3d') ? 'pol' : 'bol';
+        const kind = 'bol';
         const b = REG[kind].byId.get(img.getAttribute(REG[kind].imgAttr));
         if (b) {
           img.src = thumbURL(kind, b);
@@ -196,9 +133,9 @@ export function bindBollard3D(scope) {
   if (!scope.dataset.bol3dBound) {
     scope.dataset.bol3dBound = '1';
     scope.addEventListener('click', (e) => {
-      const btn = e.target.closest ? e.target.closest('.bol3d,.pol3d') : null;
+      const btn = e.target.closest ? e.target.closest('.bol3d') : null;
       if (!btn || !scope.contains(btn)) return;
-      openViewer(btn.classList.contains('pol3d') ? 'pol' : 'bol', btn.dataset.bol || btn.dataset.pol);
+      openViewer('bol', btn.dataset.bol);
     });
   }
 }

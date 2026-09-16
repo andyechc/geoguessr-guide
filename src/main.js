@@ -5,7 +5,6 @@ import bollards from '../data/bollards.json';
 import phones from '../data/phones.json';
 import scripts from '../data/scripts.json';
 import { renderPlate, plateColorFamily } from './plates.js';
-import poles from '../data/poles.json';
 
 // Bollard 3D: placeholder + carga perezosa del módulo three.js
 function bolImg(b) {
@@ -16,15 +15,6 @@ function bolImg(b) {
 }
 function ensureBol3D() {
   import('./bollard-3d.js').then((m) => m.bindBollard3D(app)).catch(() => {});
-}
-function poleMaterialColor(m) {
-  return m === 'wood' ? '#8A6B4A' : m === 'concrete' ? '#C9CED8' : '#7D8AA0';
-}
-function polImg(p) {
-  return `<button class="bol3d pol3d" data-pol="${p.id}" title="Ver en 3D · View in 3D">
-    <img data-pol3d="${p.id}" alt="Poste ${p.countries.join(' ')}" />
-    <span class="bol3d-badge">360°</span>
-  </button>`;
 }
 
 const app = document.getElementById('app');
@@ -39,7 +29,6 @@ const SECTIONS = [
   { id: 'home', icon: '<i class="fa-solid fa-house"></i>', label: () => t('secHome') },
   { id: 'plates', icon: '<i class="fa-solid fa-id-card"></i>', label: () => t('secPlates') },
   { id: 'bollards', icon: '<i class="fa-solid fa-road-barrier"></i>', label: () => t('secBollards') },
-  { id: 'poles', icon: '<i class="fa-solid fa-broadcast-tower"></i>', label: () => t('secPoles') },
   { id: 'countries', icon: '<i class="fa-solid fa-earth-americas"></i>', label: () => t('secCountries') },
   { id: 'scripts', icon: '<i class="fa-solid fa-language"></i>', label: () => t('secScripts') }
 ];
@@ -48,11 +37,10 @@ const SECTIONS = [
 const F = {
   plateCont: 'all', plateColor: 'all', plateQ: '', plateDuel: 'all', plateTab: 'archive', plateBlur: true,
   bolCont: 'all', bolQ: '', bolDuel: 'all', bolTab: 'archive',
-  polCont: 'all', polQ: '', polMat: 'all', polTab: 'archive',
   scriptQ: '', scriptTab: 'archive',
   ctryQ: '', ctryCont: 'all', ctryDrive: 'all', ctrySort: 'name-asc'
 };
-const IDA = { plates: {}, bollards: {}, poles: {} };
+const IDA = { plates: {}, bollards: {} };
 
 const DUELS = {
   plates: [
@@ -238,7 +226,6 @@ function countryBadge(iso, big = false, nameHTML = null) {
 }
 function hasPlate(iso) { return plates.some(p => p.iso === iso); }
 function hasBol(iso) { return bollards.some(b => b.countries.includes(iso)); }
-function hasPole(iso) { return poles.some(p => p.countries.includes(iso)); }
 function hasScript(iso) { return scripts.some(s => s.countries.includes(iso)); }
 function phoneNote(iso) {
   const p = phones.find(x => x.iso === iso);
@@ -283,7 +270,6 @@ function renderHome() {
   const cards = [
     { href: 'plates', icon: '<i class="fa-solid fa-id-card"></i>', n: plates.length, title: t('secPlates'), desc: t('toolPlatesDesc') },
     { href: 'bollards', icon: '<i class="fa-solid fa-road-barrier"></i>', n: bollards.length, title: t('secBollards'), desc: t('toolBollardsDesc') },
-    { href: 'poles', icon: '<i class="fa-solid fa-broadcast-tower"></i>', n: poles.length, title: t('secPoles'), desc: t('toolPolesDesc') },
     { href: 'scripts', icon: '<i class="fa-solid fa-language"></i>', n: scripts.length, title: t('secScripts'), desc: t('toolScriptsDesc') },
     { href: 'countries', icon: '<i class="fa-solid fa-earth-americas"></i>', n: countries.filter(c => c.geo).length, title: t('secCountries'), desc: t('toolCountriesDesc') }
   ];
@@ -396,48 +382,13 @@ const ID_CONFIG = {
       if (a.continent && b.continent !== a.continent) return false;
       return true;
     }
-  },
-  poles: {
-    steps: [
-      {
-        key: 'material',
-        es: '¿De qué material es el poste?', en: 'What is the pole made of?',
-        sub: { es: 'Madera, hormigón o metal a simple vista', en: 'Wood, concrete or metal at a glance' },
-        options: [
-          { v: 'wood', sw: '#8A6B4A', es: 'Madera', en: 'Wood' },
-          { v: 'concrete', sw: '#C9CED8', es: 'Hormigón', en: 'Concrete' },
-          { v: 'metal', sw: '#7D8AA0', es: 'Metal (celosía)', en: 'Metal (lattice)' }
-        ]
-      },
-      {
-        key: 'arms',
-        es: '¿Lleva cruceta?', en: 'Does it carry a crossarm?',
-        sub: { es: 'El travesaño horizontal de arriba', en: 'The horizontal bar at the top' },
-        options: [
-          { v: 'yes', sw: '#8A6B4A', es: 'Sí, con cruceta', en: 'Yes, with crossarm' },
-          { v: 'no', sw: '#1c1840', es: 'Sin cruceta', en: 'No crossarm' }
-        ]
-      },
-      {
-        key: 'continent',
-        es: '¿En qué continente estás?', en: 'Which continent are you on?',
-        sub: { es: 'Cruza con idioma y matrícula', en: 'Cross-check with language and plates' },
-        options: CONTINENTS.map(c => ({ v: c, sw: null, es: c, en: c }))
-      }
-    ],
-    match: (p, a) => {
-      if (a.material && p.material !== a.material) return false;
-      if (a.arms && (p.arms ? 'yes' : 'no') !== a.arms) return false;
-      if (a.continent && p.continent !== a.continent) return false;
-      return true;
-    }
   }
 };
 function practiceHTML(type) {
   const L = getLang();
   const cfg = ID_CONFIG[type];
   const answers = IDA[type];
-  const pool = { plates, bollards, poles }[type] || [];
+  const pool = { plates, bollards }[type] || [];
   const cands = pool.filter(x => cfg.match(x, answers));
   const answered = cfg.steps.filter(s => answers[s.key] !== undefined);
   const next = cfg.steps.find(s => answers[s.key] === undefined);
@@ -460,9 +411,7 @@ function practiceHTML(type) {
   const cards = cands.length && cands.length <= 12 ? `<div class="grid">${
     type === 'plates'
       ? cands.map((p, i) => `<article class="card anim" ${stagger(i)}><div class="svgwrap platewrap">${renderPlate(p)}</div><div class="pad"><div class="meta"><span class="tag ct"><b>${p.iso}</b> · ${countryName(p.iso)}</span></div><p>${p[L]}</p></div></article>`).join('')
-      : type === 'bollards'
-      ? cands.map((b, i) => `<article class="card bol-card anim" ${stagger(i)}>${bolImg(b)}<div class="pad"><div class="meta"><span class="tag ct"><b>${b.countries.join(' · ')}</b></span></div><p>${b[L]}</p></div></article>`).join('')
-      : cands.map((p, i) => `<article class="card bol-card anim" ${stagger(i)}>${polImg(p)}<div class="pad"><div class="meta"><span class="tag ct"><b>${p.countries.join(' · ')}</b></span></div><p>${p[L]}</p></div></article>`).join('')
+      : cands.map((b, i) => `<article class="card bol-card anim" ${stagger(i)}>${bolImg(b)}<div class="pad"><div class="meta"><span class="tag ct"><b>${b.countries.join(' · ')}</b></span></div><p>${b[L]}</p></div></article>`).join('')
   }</div>` : '';
   return `${dots}${chips}${body}
     <div class="id-count"><i class="fa-solid fa-bullseye"></i> ${cands.length} ${t('candidates')}</div>${cards}
@@ -479,7 +428,7 @@ function bindPractice(type) {
   });
   const r = app.querySelector('[data-reset]');
   if (r) r.onclick = () => { IDA[type] = {}; rerenderSection(); };
-  if (type === 'bollards' || type === 'poles') ensureBol3D();
+  if (type === 'bollards') ensureBol3D();
 }
 
 // ---------- matrículas ----------
@@ -613,60 +562,6 @@ function renderBollards() {
   ensureBol3D();
 }
 
-// ---------- postes ----------
-function polList() {
-  const q = F.polQ.trim().toLowerCase();
-  return poles.filter(p => {
-    if (F.polCont !== 'all' && p.continent !== F.polCont) return false;
-    if (F.polMat !== 'all' && p.material !== F.polMat) return false;
-    if (q && !`${p.countries.join(' ')} ${p.es} ${p.en} ${p.countries.map(countryName).join(' ')}`.toLowerCase().includes(q)) return false;
-    return true;
-  });
-}
-function renderPoles() {
-  const L = getLang();
-  const tab = F.polTab;
-  const tabs = `<div class="id-tabs">
-      <button class="id-tab ${tab === 'archive' ? 'on' : ''}" data-tab="archive"><i class="fa-solid fa-box-archive"></i> ${t('tabArchive')}</button>
-      <button class="id-tab ${tab === 'practice' ? 'on' : ''}" data-tab="practice"><i class="fa-solid fa-brain"></i> ${t('tabPractice')}</button>
-    </div>`;
-  if (tab === 'practice') {
-    app.innerHTML = `<h1 class="anim">${t('toolPolesTitle')}</h1><p class="muted">${t('toolPolesDesc')}</p>${tabs}${practiceHTML('poles')}`;
-    app.querySelectorAll('.id-tab').forEach(b => b.onclick = () => { F.polTab = b.dataset.tab; rerenderSection(); });
-    bindPractice('poles');
-    return;
-  }
-  const list = polList();
-  const mats = [
-    ['all', t('allColors')],
-    ['wood', `<span class="swdot" style="background:${poleMaterialColor('wood')}"></span>${t('cWood')}`],
-    ['concrete', `<span class="swdot" style="background:${poleMaterialColor('concrete')}"></span>${t('cConcrete')}`],
-    ['metal', `<span class="swdot" style="background:${poleMaterialColor('metal')}"></span>${t('cMetal')}`]
-  ].map(([v, l]) => `<button class="chip ${F.polMat === v ? 'on' : ''}" data-mat="${v}">${l}</button>`).join('');
-  app.innerHTML = `<h1 class="anim">${t('polesTitle')}</h1><p class="muted">${t('polesSub')}</p>
-    ${tabs}
-    <div class="filters">
-      <label>${t('fContinent')}: <select id="fp-cont">${contOptions(F.polCont)}</select></label>
-      <div class="chips" role="group"><span class="flabel">${t('fMaterial')}:</span>${mats}</div>
-      <input id="fp-q" type="search" placeholder="${L === 'es' ? 'Filtrar: madera, cruceta, JP…' : 'Filter: wood, crossarm, JP…'}" value="${F.polQ.replace(/"/g, '&quot;')}" />
-    </div>
-    <p class="muted">${list.length} ${t('results')}</p>
-    <div class="grid">${list.map((p, i) => `
-      <article class="card bol-card anim" ${stagger(i)}>
-        ${polImg(p)}
-        <div class="pad">
-          <div class="meta">${p.countries.map(c => countryBadge(c)).join('')}</div>
-          <p>${p[L]}</p>
-        </div>
-      </article>`).join('') || `<p>${t('noResults')}</p>`}</div>`;
-  app.querySelectorAll('.id-tab').forEach(b => b.onclick = () => { F.polTab = b.dataset.tab; rerenderSection(); });
-  app.querySelectorAll('[data-mat]').forEach(b => b.onclick = () => { F.polMat = b.dataset.mat; rerenderSection(); });
-  document.getElementById('fp-cont').onchange = (e) => { F.polCont = e.target.value; rerenderSection(); };
-  const q = document.getElementById('fp-q');
-  q.oninput = (e) => { F.polQ = e.target.value; renderPoles(); keepFocus('fp-q'); };
-  ensureBol3D();
-}
-
 // ---------- teléfonos (datos para Países) ----------
 function countryPhoneNum(c) { return parseInt((c.phone || '').replace(/\D/g, ''), 10) || 0; }
 
@@ -761,14 +656,12 @@ function contentLinks(iso) {
   const links = [];
   if (hasPlate(iso)) links.push(`<button class="clink" data-sec="plates" data-iso="${iso}" title="${t('secPlates')}"><i class="fa-solid fa-id-card"></i></button>`);
   if (hasBol(iso)) links.push(`<button class="clink" data-sec="bollards" data-iso="${iso}" title="${t('secBollards')}"><i class="fa-solid fa-road-barrier"></i></button>`);
-  if (hasPole(iso)) links.push(`<button class="clink" data-sec="poles" data-iso="${iso}" title="${t('secPoles')}"><i class="fa-solid fa-broadcast-tower"></i></button>`);
   if (hasScript(iso)) links.push(`<button class="clink" data-sec="scripts" data-iso="${iso}" title="${t('secScripts')}"><i class="fa-solid fa-language"></i></button>`);
   return links.length ? `<div class="clinks"><span>${t('seeIn')}:</span>${links.join('')}</div>` : '';
 }
 function goFiltered(sec, iso) {
   if (sec === 'plates') { F.plateTab = 'archive'; F.plateQ = iso; F.plateDuel = 'all'; F.plateCont = 'all'; F.plateColor = 'all'; }
   if (sec === 'bollards') { F.bolTab = 'archive'; F.bolQ = iso; F.bolDuel = 'all'; F.bolCont = 'all'; }
-  if (sec === 'poles') { F.polTab = 'archive'; F.polQ = iso; F.polCont = 'all'; F.polMat = 'all'; }
   if (sec === 'scripts') { F.scriptTab = 'archive'; F.scriptQ = iso; }
   location.hash = `#/${getLang()}/${sec}`;
 }
@@ -846,9 +739,8 @@ function renderSearch(raw) {
   const q = raw.trim().toLowerCase();
   const pl = plates.filter(p => `${p.iso} ${p.format} ${p.es} ${p.en} ${countryName(p.iso)}`.toLowerCase().includes(q));
   const bo = bollards.filter(b => `${b.countries.join(' ')} ${b.es} ${b.en}`.toLowerCase().includes(q));
-  const po = poles.filter(p => `${p.countries.join(' ')} ${p.es} ${p.en} ${p.countries.map(countryName).join(' ')}`.toLowerCase().includes(q));
   const co = countries.filter(c => c.geo && `${c.iso} ${c.es} ${c.en} ${c.phone}`.toLowerCase().includes(q.replace('+', '')));
-  const total = pl.length + bo.length + po.length + sc.length + co.length;
+  const total = pl.length + bo.length + sc.length + co.length;
   app.innerHTML = `<h1 class="anim">${t('searchTitle')}: “${raw.trim()}”</h1>
     <p class="muted">${total} ${t('results')}</p>
     ${pl.length ? `<h2><i class="fa-solid fa-id-card"></i> ${t('secPlates')} (${pl.length})</h2><div class="grid">${pl.slice(0, 6).map((p, i) => `
@@ -858,10 +750,7 @@ function renderSearch(raw) {
     ${bo.length ? `<h2><i class="fa-solid fa-road-barrier"></i> ${t('secBollards')} (${bo.length})</h2><div class="grid bol-grid">${bo.slice(0, 6).map((b, i) => `
       <article class="card bol-card anim" ${stagger(i)}>${bolImg(b)}
       <div class="pad"><div class="meta">${b.countries.map(c => countryBadge(c)).join('')}</div><p>${hi(b[L], q)}</p></div></article>`).join('')}</div>` : ''}
-    ${po.length ? `<h2><i class="fa-solid fa-broadcast-tower"></i> ${t('secPoles')} (${po.length})</h2><div class="grid">${po.slice(0, 6).map((p, i) => `
-      <article class="card bol-card anim" ${stagger(i)}>${polImg(p)}
-      <div class="pad"><div class="meta">${p.countries.map(c => countryBadge(c)).join('')}</div><p>${hi(p[L], q)}</p>
-      <p><a href="#/${L}/poles">${t('secPoles')} →</a></p></div></article>`).join('')}</div>` : ''}
+
     ${co.length ? `<h2><i class="fa-solid fa-earth-americas"></i> ${t('secCountries')} (${co.length})</h2><div class="tablewrap"><table class="phones"><tbody>
       ${co.slice(0, 10).map(c => `<tr><td>${countryBadge(c.iso, false, hi(getLang() === 'es' ? c.es : c.en, q))}</td><td class="code">${hi(c.phone, q)}</td><td>${driveChip(c.iso)}</td></tr>`).join('')}</tbody></table></div>
       <p><a href="#/${L}/countries">${t('secCountries')} →</a></p>` : ''}
@@ -892,7 +781,7 @@ async function renderAttribution() {
 function currentSection() {
   const parts = (location.hash || '').replace('#/', '').split('/');
   const p = parts[1] || '';
-  if (['plates', 'bollards', 'poles', 'scripts', 'countries', 'attribution'].includes(p)) return p;
+  if (['plates', 'bollards', 'scripts', 'countries', 'attribution'].includes(p)) return p;
   return 'home';
 }
 function rerenderSection() {
@@ -901,7 +790,6 @@ function rerenderSection() {
   renderSections(s);
   if (s === 'plates') renderPlates();
   else if (s === 'bollards') renderBollards();
-  else if (s === 'poles') renderPoles();
   else if (s === 'scripts') renderScripts();
   else if (s === 'countries') renderCountries();
   else renderHome();
@@ -920,7 +808,7 @@ export function route() {
   const q = searchEl.value || '';
 
   let section = 'home';
-  if (['plates', 'bollards', 'poles', 'scripts', 'countries', 'attribution'].includes(page)) section = page;
+  if (['plates', 'bollards', 'scripts', 'countries', 'attribution'].includes(page)) section = page;
   if (section !== 'home' && window.__heroCleanup) { window.__heroCleanup(); window.__heroCleanup = null; }
   renderSections(section);
 
@@ -928,7 +816,6 @@ export function route() {
   if (searching) { renderSearch(q); }
   else if (section === 'plates') renderPlates();
   else if (section === 'bollards') renderBollards();
-  else if (section === 'poles') renderPoles();
   else if (section === 'scripts') renderScripts();
   else if (section === 'countries') renderCountries();
   else if (section === 'attribution') renderAttribution();
