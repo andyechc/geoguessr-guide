@@ -224,7 +224,7 @@ h3 { color: var(--teal); font-size: 13px; text-transform: uppercase; letter-spac
 .card .pad { padding: 14px 16px 16px; }
 .meta { display: flex; gap: 6px; flex-wrap: wrap; margin: 8px 0 10px; }
 .tag { font-size: 11px; font-weight: 700; border: 1px solid var(--line); border-radius: 99px; padding: 2px 9px; color: var(--mut); background: rgba(20, 17, 48, 0.6); }
-.tag.ct { color: var(--amber); border-color: rgba(251, 191, 36, 0.4); }
+.tag.ct { color: #9dbcff; border-color: rgba(126, 164, 255, 0.45); }
 .tag-other { color: #111; background: var(--amber); border-color: var(--amber); margin-right: 6px; }
 .tag.mono { font-family: ui-monospace, Menlo, monospace; }
 .kv { font-size: 13px; color: var(--mut); }
@@ -537,12 +537,12 @@ img.flag:hover { transform: scale(1.12); }
 .phone-id .meta { margin: 0; }
 .copybtn {
   font-family: ui-monospace, Menlo, monospace; font-weight: 800; font-size: 16px;
-  color: var(--amber); background: rgba(255, 90, 110, 0.08);
-  border: 1px dashed rgba(255, 90, 110, 0.55); border-radius: 999px;
+  color: #9dbcff; background: rgba(126, 164, 255, 0.08);
+  border: 1px dashed rgba(126, 164, 255, 0.55); border-radius: 999px;
   padding: 9px 13px; cursor: pointer; white-space: nowrap;
   transition: all 0.15s var(--ease);
 }
-.copybtn:hover { background: rgba(251, 191, 36, 0.18); transform: translateY(-2px); }
+.copybtn:hover { background: rgba(126, 164, 255, 0.18); transform: translateY(-2px); }
 .copybtn:active { transform: scale(0.96); }
 .isochip {
   display: inline-block; background: rgba(94, 234, 212, 0.12); border: 1px solid rgba(94, 234, 212, 0.45);
@@ -563,7 +563,7 @@ table.phones tbody tr:last-child td { border-bottom: 0; }
 table.phones th.sortable { cursor: pointer; user-select: none; }
 table.phones th.sortable:hover { color: var(--amber); }
 table.phones th.sortable.on { color: var(--teal); }
-table.phones .code { font-family: ui-monospace, Menlo, monospace; font-weight: 800; color: var(--amber); white-space: nowrap; font-size: 15px; }
+table.phones .code { font-family: ui-monospace, Menlo, monospace; font-weight: 800; color: #9dbcff; white-space: nowrap; font-size: 15px; }
 table.phones .code.sm { font-size: 13px; }
 table.phones .code.domain { color: var(--teal); }
 table.phones td.note { color: var(--mut); font-size: 13px; max-width: 360px; }
@@ -584,7 +584,11 @@ table.phones .copybtn.sm { font-size: 13px; padding: 6px 10px; }
 .cbadge.big { font-size: 18px; padding: 6px 16px 6px 7px; gap: 10px; }
 .cbadge.big b { font-size: 15px; }
 .cbadge.big img.flag.xs { width: 38px; }
-.tag.drive { color: var(--amber); border-color: rgba(251, 191, 36, 0.4); font-weight: 800; }
+.tag.drive { color: #9dbcff; border-color: rgba(126, 164, 255, 0.45); font-weight: 800; padding: 3px 10px; }
+.vh {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}
 
 /* ===== nomenclátor ===== */
 .country-grid { grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); }

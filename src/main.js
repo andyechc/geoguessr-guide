@@ -247,9 +247,9 @@ function phoneNote(iso) {
 function driveChip(iso) {
   const c = countryEntry(iso);
   if (!c) return '';
-  return c.drive === 'left'
-    ? `<span class="tag drive">◀ ${t('dLeft')}</span>`
-    : `<span class="tag drive">▶ ${t('dRight')}</span>`;
+  const left = c.drive === 'left';
+  const label = left ? t('dLeft') : t('dRight');
+  return `<span class="tag drive" title="${label}"><i class="fa-solid ${left ? 'fa-arrow-left' : 'fa-arrow-right'}"></i><span class="vh">${label}</span></span>`;
 }
 function stagger(i) { return `style="animation-delay:${Math.min(i * 35, 420)}ms"`; }
 function bindLB(scope) {
