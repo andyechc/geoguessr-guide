@@ -72,6 +72,114 @@ const DUELS = {
 };
 
 
+const CONTINENTS = ['Europe', 'Asia', 'Africa', 'Americas', 'Oceania'];
+
+// ---------- helpers ----------
+let toastTimer = null;
+function showToast(msg) {
+  toast.textContent = msg;
+  toast.hidden = false;
+  toast.classList.remove('show');
+  void toast.offsetWidth;
+  toast.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => { toast.classList.remove('show'); toast.hidden = true; }, 1800);
+}
+function copyCode(code) {
+  const done = () => showToast(`<i class="fa-solid fa-check"></i> ${code}`);
+  if (navigator.clipboard?.writeText) navigator.clipboard.writeText(code).then(done).catch(done);
+  else done();
+}
+function flagURL(iso, w = 80) { return `./img/flags/${iso.toLowerCase()}-${w}.png`; }
+function isoFromFlag(img) {
+  const m = (img.getAttribute('src') || '').match(/\/([a-z]{2})-\d+\.png/i);
+  return m ? m[1].toUpperCase() : null;
+}
+// ---------- modal comparativa idiomas ----------
+const cmp = document.getElementById('cmp');
+const cmpHead = document.getElementById('cmp-head');
+const cmpList = document.getElementById('cmp-list');
+function closeCmp() { cmp.hidden = true; }
+function openCmp(id) {
+  const s = scripts.find(x => x.id === id);
+  if (!s || !s.compare) return;
+  const L = getLang();
+  cmpHead.innerHTML = `<h3 style="margin:0 40px 4px 0">${s[L].name}</h3><div class="quiz-sample sm" dir="auto" style="margin:0 0 6px">${s.sample}</div>`;
+  cmpList.innerHTML = `<div class="cmp-grid">` + s.compare.map(r =>
+    `<article class="cmp-card">
+      <div class="cmp-chars" dir="auto">${r.chars}</div>
+      <p>${r[L]}</p>
+      <div class="cmp-countries">${r.countries.map(c => countryBadge(c)).join('')}</div>
+    </article>`).join('') + `</div>`;
+  cmp.hidden = false;
+}
+document.getElementById('cmp-close').onclick = closeCmp;
+cmp.addEventListener('click', (e) => { if (e.target === cmp) closeCmp(); });
+function openBolCmp(id) {
+  const b = bollards.find(x => x.id === id);
+  if (!b || !b.compare) return;
+  const L = getLang();
+  cmpHead.innerHTML = `<h3 style="margin:0 40px 4px 0">${t('cmpBolTitle')}</h3><p class="muted" style="margin:0 0 6px">${t('cmpBolScope')}</p><div style="margin-bottom:8px">${b.countries.map(c => countryBadge(c)).join('')}</div><p class="muted" style="margin:0 0 6px">${b[L]}</p>`;
+  cmpList.innerHTML = `<div class="cmp-grid">` + b.compare.map(r =>
+    `<article class="cmp-card">
+      <div class="cmp-chars" dir="auto">${r.chars}</div>
+      <p><span class="tag tag-other">${t('cmpOther')}</span> ${r[L]}</p>
+      <div class="cmp-countries">${r.countries.map(c => countryBadge(c)).join('')}</div>
+    </article>`).join('') + `</div>`;
+  cmp.hidden = false;
+}
+
+// ---------- modal mapa país ----------
+const cmap = document.getElementById('cmap');
+const cmapHead = document.getElementById('cmap-head');
+const cmapMeta = document.getElementById('cmap-meta');
+const cmapFrame = document.getElementById('cmap-frame');
+const cmapImg = document.getElementById('cmap-img');
+const cmapPin = document.getElementById('cmap-pin');
+function closeCmap() {
+  cmap.hidden = true;
+}
+// Zoom offline: el PNG es equirectangular (-180..180, 90..-90), se centra por CSS
+const MAP_HOME_K = 720; // 50° de longitud visibles al abrir
+const MAP_MIN_K = 200, MAP_MAX_K = 2880;
+let cmapK = MAP_HOME_K, cmapFx = 0.5, cmapFy = 0.5, cmapOx = 0, cmapOy = 0;
+function cmapApply() {
+  const r = cmapFrame.getBoundingClientRect();
+  const AR = r.width / Math.max(1, r.height);
+  cmapImg.style.transition = 'left .45s cubic-bezier(.22,1,.36,1), top .45s cubic-bezier(.22,1,.36,1), width .45s cubic-bezier(.22,1,.36,1)';
+  cmapImg.style.width = cmapK + '%';
+  cmapImg.style.left = (50 - cmapFx * cmapK + cmapOx) + '%';
+  cmapImg.style.top = (50 - cmapFy * cmapK * AR / 2 + cmapOy) + '%';
+  cmapPin.style.left = `calc(50% + ${cmapOx}%)`;
+  cmapPin.style.top = `calc(50% + ${cmapOy}%)`;
+}
+function cmapZoom(factor) {
+  cmapK = Math.min(MAP_MAX_K, Math.max(MAP_MIN_K, cmapK * factor));
+  cmapApply();
+}
+function openCountryMap(iso) {
+  const c = countryEntry(iso);
+  if (!c || c.lat === undefined || c.lng === undefined) return;
+  cmapHead.innerHTML = countryBadge(c.iso, true);
+  const note = phoneNote(c.iso);
+  cmapMeta.innerHTML = `<b>${c.phone}</b> · ${c.drive === 'left' ? '◀ ' + t('dLeft') : '▶ ' + t('dRight')} · ${c.continent}${note ? ' · ' + note : ''}`;
+  cmapPin.innerHTML = `<b>${c.iso}</b>`;
+  document.getElementById('cmap-zin').title = t('zoomIn');
+  document.getElementById('cmap-zout').title = t('zoomOut');
+  cmap.hidden = false;
+  cmapFx = (c.lng + 180) / 360;
+  cmapFy = (90 - c.lat) / 180;
+  cmapK = MAP_HOME_K;
+  cmapOx = 0; cmapOy = 0;
+  cmapPin.style.left = '50%';
+  cmapPin.style.top = '50%';
+  cmapImg.style.transition = 'none';
+  cmapImg.style.width = '100%';
+  cmapImg.style.left = '0%';
+  cmapImg.style.top = '0%';
+  requestAnimationFrame(() => requestAnimationFrame(cmapApply));
+}
+document.getElementById('cmap-zin').onclick = (e) => { e.stopPropagation(); cmapZoom(1.6); };
 document.getElementById('cmap-zout').onclick = (e) => { e.stopPropagation(); cmapZoom(1 / 1.6); };
 cmapFrame.addEventListener('wheel', (e) => { e.preventDefault(); cmapZoom(e.deltaY < 0 ? 1.25 : 1 / 1.25); }, { passive: false });
 // Pan por arrastre (ratón + táctil)

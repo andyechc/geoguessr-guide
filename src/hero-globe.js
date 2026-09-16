@@ -1,6 +1,7 @@
 // Hero 3D estilo GeoGuessr: Tierra por puntos + pin movible con click + Luna.
 // three.js, sin texturas. Limpia todo al desmontar.
 import * as THREE from 'three';
+import { EARTH_W, EARTH_H, EARTH_MASK } from './earth-mask.js';
 
 const PIN_RED = 0xe0344a; // rojo pin GeoGuessr (#CF142B aclarado para fondo oscuro)
 const MAP_BLUE = 0x7ea4ff; // azul mapa (#4285F4 aclarado)
@@ -32,8 +33,8 @@ export function initHeroGlobe(canvas) {
   world.add(globe);
   scene.add(world);
 
-  // --- Tierra por puntos: se muestrea public/img/world-map.png (equirectangular).
-  // Si la imagen falla, fallback a esfera fibonacci.
+  // --- Tierra por puntos desde máscara embarcada (síncrono, sin fetch).
+  // Si la máscara falla, fallback a esfera fibonacci.
   const R = 1;
   let landPoints = null;
 
@@ -79,23 +80,16 @@ export function initHeroGlobe(canvas) {
     );
   }
 
-  function buildEarth(img) {
-    const W = 220;
-    const H = 110;
-    const cv = document.createElement('canvas');
-    cv.width = W; cv.height = H;
-    const cx = cv.getContext('2d', { willReadFrequently: true });
-    cx.drawImage(img, 0, 0, W, H);
-    const data = cx.getImageData(0, 0, W, H).data;
+  function buildEarth() {
+    const raw = atob(EARTH_MASK);
     const land = [];
-    for (let y = 0; y < H; y++) {
-      for (let x = 0; x < W; x++) {
-        const i = (y * W + x) * 4;
-        const bright = (data[i] + data[i + 1] + data[i + 2]) / 3;
-        if (bright > 70) land.push([x, y]); // océano #0b1020 ≈ 21
+    for (let y = 0; y < EARTH_H; y++) {
+      for (let x = 0; x < EARTH_W; x++) {
+        const i = y * EARTH_W + x;
+        if ((raw.charCodeAt(i >> 3) >> (i & 7)) & 1) land.push([x, y]);
       }
     }
-    if (land.length < 200) return; // mapa ilegible: queda el fallback
+    if (land.length < 200) return false; // máscara ilegible: queda el fallback
     const N = 2600;
     const pos = new Float32Array(N * 3);
     const col = new Float32Array(N * 3);
@@ -106,8 +100,8 @@ export function initHeroGlobe(canvas) {
     const v = new THREE.Vector3();
     for (let i = 0; i < N; i++) {
       const [px, py] = land[(Math.random() * land.length) | 0];
-      const lng = (px / W) * 360 - 180;
-      const lat = 90 - (py / H) * 180;
+      const lng = (px / EARTH_W) * 360 - 180;
+      const lat = 90 - (py / EARTH_H) * 180;
       eqToVec3(lat, lng, R * (1 + Math.random() * 0.004), v);
       pos.set([v.x, v.y, v.z], i * 3);
       const r = Math.random();
@@ -121,10 +115,7 @@ export function initHeroGlobe(canvas) {
 
   buildFallback();
   try {
-    const mapImg = new Image();
-    mapImg.onload = () => { try { buildEarth(mapImg); } catch { /* fallback */ } };
-    mapImg.onerror = () => {};
-    mapImg.src = './img/world-map.png';
+    if (buildEarth() === false) throw new Error('mask');
   } catch { /* fallback */ }
 
   // --- Luna orbitando ---
@@ -202,6 +193,8 @@ export function initHeroGlobe(canvas) {
   }
   placeMarker(latLngToVec3(48.85, 2.35, R).normalize());
   markerPulse = 0;
+  // Encuadre inicial: Europa/África de frente (el pin visible)
+  globe.rotation.y = -Math.atan2(marker.position.x, marker.position.z);
 
   // pop sintetizado (sin assets)
   let actx = null;
