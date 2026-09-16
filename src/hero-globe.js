@@ -95,15 +95,8 @@ export function initHeroGlobe(canvas) {
     const v = new THREE.Vector3();
     for (let i = 0; i < N; i++) {
       const [px, py] = land[(Math.random() * land.length) | 0];
-      let lng = (px / EARTH_W) * 360 - 180;
+      const lng = (px / EARTH_W) * 360 - 180;
       const lat = 90 - (py / EARTH_H) * 180;
-      // Espejo antipodal: el Pacífico real está vacío y medio giro se veía roto.
-      // El 45% de los puntos se dibuja desplazado 180° para que siempre haya
-      // tierra a la vista (licencia visual, no geografía exacta).
-      if (Math.random() < 0.45) {
-        lng += 180;
-        if (lng > 180) lng -= 360;
-      }
       eqToVec3(lat, lng, R * (1 + Math.random() * 0.004), v);
       pos.set([v.x, v.y, v.z], i * 3);
       const r = Math.random();
@@ -203,7 +196,8 @@ export function initHeroGlobe(canvas) {
   placeMarker(latLngToVec3(48.85, 2.35, R).normalize());
   markerPulse = 0;
   // Encuadre inicial: Europa/África de frente (el pin visible)
-  globe.rotation.y = -Math.atan2(marker.position.x, marker.position.z);
+  const baseRotY = -Math.atan2(marker.position.x, marker.position.z);
+  globe.rotation.y = baseRotY;
 
   // pop sintetizado (sin assets)
   let actx = null;
@@ -324,7 +318,9 @@ export function initHeroGlobe(canvas) {
     const dt = Math.min(clock.getDelta(), 0.05);
     const t = clock.elapsedTime;
 
-    globe.rotation.y += dt * 0.14;
+    // Vaivén sobre el Atlántico (±50°): Américas ↔ Europa/África.
+    // Nunca muestra el Pacífico vacío ni duplica continentes.
+    globe.rotation.y = baseRotY + Math.sin(t * 0.12) * 0.87;
     moonPivot.rotation.y -= dt * 0.22;
     particles.rotation.y -= dt * 0.02;
 
