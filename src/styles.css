@@ -341,7 +341,7 @@ mark { background: var(--amber); color: #111; border-radius: 3px; padding: 0 2px
 /* como en el juego: la matrícula entera va difuminada, el color manda */
 .platewrap { transition: filter 0.25s; }
 body:not(.noblur) .platewrap { filter: blur(6px); }
-.bol-grid { grid-template-columns: repeat(auto-fill, minmax(132px, 1fr)); gap: 12px; }
+.bol-grid { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 14px; }
 .bol-card { text-align: center; }
 .bol-card .pad { text-align: left; }
 /* grid completo de bollards: cards compactas */
